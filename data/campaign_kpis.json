@@ -31,7 +31,8 @@
       "id": "seguidores_ig",
       "label": "Seguidores Instagram",
       "unidade": "K",
-      "valor_atual": 0,
+      "valor_atual": 38.1,
+      "fonte": "social_metrics.json — @eduardogomestocantins — 38085 seguidores",
       "metas": {
         "1": 45.0,
         "2": 65.0,
@@ -80,7 +81,8 @@
       "id": "prefeitos_apoiadores",
       "label": "Prefeitos apoiadores formais",
       "unidade": "",
-      "valor_atual": 0,
+      "valor_atual": 100,
+      "fonte": "Evento ATM 27/03/2026 — mais de 100 prefeitos presentes",
       "metas": {
         "1": 30,
         "2": 55,
