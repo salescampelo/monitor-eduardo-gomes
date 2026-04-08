@@ -84,13 +84,13 @@ const CLUSTER_LABELS = {
 }
 
 const NAV_ITEMS = [
-  { id: 'm1', label: 'Imprensa',    Icon: Newspaper  },
-  { id: 'm2', label: 'Redes',       Icon: Users      },
-  { id: 'm3', label: 'Municipal',   Icon: MapPin     },
   { id: 'm4', label: 'Competitivo', Icon: TrendingUp },
   { id: 'm5', label: 'KPIs',        Icon: Target     },
-  { id: 'm6', label: 'Briefing',    Icon: FileText   },
+  { id: 'm3', label: 'Municipal',   Icon: MapPin     },
+  { id: 'm2', label: 'Redes',       Icon: Users      },
   { id: 'm7', label: 'Entregas',    Icon: Package2   },
+  { id: 'm6', label: 'Briefing',    Icon: FileText   },
+  { id: 'm1', label: 'Imprensa',    Icon: Newspaper  },
 ]
 
 // ─────────────────────────────────────────────────────────────
@@ -506,8 +506,8 @@ function useCountdown(target) {
 // ─────────────────────────────────────────────────────────────
 // ModulePanel — collapsible wrapper for every module
 // ─────────────────────────────────────────────────────────────
-function ModulePanel({ id, icon: Icon, title, badge, children }) {
-  const [open, setOpen] = useState(true)
+function ModulePanel({ id, icon: Icon, title, badge, subtitle, children }) {
+  const [open, setOpen] = useState(false)
   return (
     <div className="module-panel" id={id}>
       <div className="module-header" onClick={() => setOpen(o => !o)}>
@@ -525,7 +525,16 @@ function ModulePanel({ id, icon: Icon, title, badge, children }) {
           : <ChevronDown size={18} color="var(--text-muted)" />
         }
       </div>
-      {open && <div className="module-body">{children}</div>}
+      {open && (
+        <div className="module-body">
+          {subtitle && (
+            <p style={{ fontSize: 'var(--font-xs)', color: 'var(--text-muted)', margin: '-8px 0 16px 0', fontStyle: 'italic' }}>
+              {subtitle}
+            </p>
+          )}
+          {children}
+        </div>
+      )}
     </div>
   )
 }
@@ -547,7 +556,8 @@ function M1MonitorImprensa({ data }) {
   })
 
   return (
-    <ModulePanel id="m1" icon={Newspaper} title="Monitor de Imprensa">
+    <ModulePanel id="m1" icon={Newspaper} title="Monitor de Imprensa"
+      subtitle="Menções ao Senador Eduardo Gomes na mídia — coletadas por Google News RSS em tempo real">
       <div className="filter-bar">
         {clusters.map(c => (
           <button key={c} className={`filter-btn${clusterFilter === c ? ' active' : ''}`}
@@ -656,7 +666,8 @@ function M2RedesSociais({ metrics, sentiment }) {
   }
 
   return (
-    <ModulePanel id="m2" icon={Users} title="Redes Sociais">
+    <ModulePanel id="m2" icon={Users} title="Redes Sociais"
+      subtitle="Métricas Instagram do senador e do campo adversário — atualização semanal via Apify">
       {!hasData ? (
         <div className="empty-state">
           <Users size={32} />
@@ -764,7 +775,8 @@ function M3InteligenciaMunicipal({ data }) {
 
   return (
     <ModulePanel id="m3" icon={MapPin} title="Inteligência Municipal"
-      badge={municipios.length > 0 ? `${municipios.length} municípios` : null}>
+      badge={municipios.length > 0 ? `${municipios.length} municípios` : null}
+      subtitle="139 municípios do Tocantins ranqueados por potencial eleitoral — base TSE 2022 e entregas">
       {municipios.length === 0 ? (
         <div className="empty-state">
           <MapPin size={32} />
@@ -867,7 +879,8 @@ function M4InteligenciaCompetitiva({ data }) {
   )
 
   return (
-    <ModulePanel id="m4" icon={TrendingUp} title="Radar Competitivo — Aliados e Adversários">
+    <ModulePanel id="m4" icon={TrendingUp} title="Radar Competitivo — Aliados e Adversários"
+      subtitle="Aliados, adversários e atores de influência — ordenados por ameaça e atualizado diariamente">
       {todos.length === 0 ? (
         <div className="empty-state">
           <TrendingUp size={32} />
@@ -1027,7 +1040,8 @@ function M5KPIs({ data }) {
   }))
 
   return (
-    <ModulePanel id="m5" icon={Target} title="KPIs de Campanha" badge={`Fase ${faseAtual}`}>
+    <ModulePanel id="m5" icon={Target} title="KPIs de Campanha" badge={`Fase ${faseAtual}`}
+      subtitle={`Metas da Fase ${faseAtual} · Eleição em ${countdown.days} dias · Dados atualizados pelo scraper`}>
       {/* Countdown */}
       <div style={{ textAlign: 'center', marginBottom: 4 }}>
         <div style={{ fontSize: 'var(--font-xs)', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 8 }}>
@@ -1111,7 +1125,8 @@ function M6BriefingDiario({ mentions }) {
   }
 
   return (
-    <ModulePanel id="m6" icon={FileText} title="Briefing Diário">
+    <ModulePanel id="m6" icon={FileText} title="Briefing Diário"
+      subtitle="Resumo executivo gerado automaticamente às 07h30 — menções com relevância ≥ 0.90">
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16, gap: 12 }}>
         <span style={{ fontSize: 'var(--font-sm)', color: 'var(--text-muted)' }}>
           Menções de alta relevância (≥ 0.9) — últimas 24h
@@ -1180,7 +1195,8 @@ function M7RadarEntregas({ data }) {
   const badgeLabel = totalGeral > 0 ? `R$ ${(totalGeral / 1e9).toFixed(1)}bi` : null
 
   return (
-    <ModulePanel id="m7" icon={Package2} title="Radar de Entregas" badge={badgeLabel}>
+    <ModulePanel id="m7" icon={Package2} title="Radar de Entregas" badge={badgeLabel}
+      subtitle="Emendas parlamentares destinadas ao Tocantins no mandato 2019–2026 — Portal da Transparência">
       {municipios.length === 0 ? (
         <div className="empty-state">
           <Package2 size={32} />
@@ -1417,7 +1433,7 @@ function AccessDenied({ onLogout }) {
 export default function App() {
   const [session,    setSession]    = useState(undefined)  // undefined = initializing
   const [authorized, setAuthorized] = useState(null)       // null = checking
-  const [activeNav,  setActiveNav]  = useState('m1')
+  const [activeNav,  setActiveNav]  = useState('m4')
   const [dataLoading, setDataLoading] = useState(true)
   const [data, setData] = useState({
     mentions: [], socialMetrics: {}, socialSentiment: {},
@@ -1577,13 +1593,13 @@ export default function App() {
             </div>
           )}
 
-          <M1MonitorImprensa    data={data.mentions} />
-          <M2RedesSociais       metrics={data.socialMetrics} sentiment={data.socialSentiment} />
-          <M3InteligenciaMunicipal data={data.geoElectoral} />
           <M4InteligenciaCompetitiva data={data.adversarios} />
           <M5KPIs               data={data.kpis} />
-          <M6BriefingDiario     mentions={data.mentions} />
+          <M3InteligenciaMunicipal data={data.geoElectoral} />
+          <M2RedesSociais       metrics={data.socialMetrics} sentiment={data.socialSentiment} />
           <M7RadarEntregas      data={data.entregas} />
+          <M6BriefingDiario     mentions={data.mentions} />
+          <M1MonitorImprensa    data={data.mentions} />
         </main>
       </div>
 
