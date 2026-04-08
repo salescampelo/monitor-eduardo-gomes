@@ -5,7 +5,7 @@ import {
 } from 'recharts'
 import {
   Newspaper, Users, MapPin, TrendingUp, Target, FileText, Package2,
-  LogOut, ChevronDown, ChevronUp, Download, Loader2, Shield, Info, X
+  LogOut, ChevronDown, ChevronUp, Download, Loader2, Shield, Info, X, RefreshCw
 } from 'lucide-react'
 
 // ─────────────────────────────────────────────────────────────
@@ -151,6 +151,30 @@ const GLOBAL_CSS = `
     transition: background 0.2s; font-family: 'Inter', sans-serif;
   }
   .btn-logout:hover { background: rgba(255,255,255,0.22); }
+  .btn-refresh {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.4);
+    color: white; border-radius: 8px;
+    padding: 6px 14px; cursor: pointer;
+    font-size: var(--font-sm); display: flex; align-items: center; gap: 6px;
+    transition: background 0.2s; font-family: 'Inter', sans-serif;
+  }
+  .btn-refresh:hover:not(:disabled) { background: rgba(255,255,255,0.1); }
+  .btn-refresh:disabled { opacity: 0.6; cursor: not-allowed; }
+
+  /* ── Toast ── */
+  .toast {
+    position: fixed; bottom: 24px; right: 24px; z-index: 300;
+    padding: 12px 20px; border-radius: 10px;
+    font-size: var(--font-sm); font-weight: 600; color: white;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    animation: toast-in 0.3s ease;
+    pointer-events: none;
+  }
+  @keyframes toast-in {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
 
   /* ── Ticker ── */
   .ticker-wrap {
@@ -1512,10 +1536,19 @@ export default function App() {
   const [authorized, setAuthorized] = useState(null)       // null = checking
   const [activeNav,  setActiveNav]  = useState('m4')
   const [dataLoading, setDataLoading] = useState(true)
+  const [refreshing, setRefreshing] = useState(false)
+  const [toast, setToast] = useState(null) // { message, type: 'success'|'error' }
   const [data, setData] = useState({
     mentions: [], socialMetrics: {}, socialSentiment: {},
     geoElectoral: {}, adversarios: {}, kpis: {}, entregas: {},
   })
+
+  // Auto-dismiss toast after 3s
+  useEffect(() => {
+    if (!toast) return
+    const id = setTimeout(() => setToast(null), 3000)
+    return () => clearTimeout(id)
+  }, [toast])
 
   // Supabase session init (skipped in dev bypass mode)
   useEffect(() => {
@@ -1545,22 +1578,41 @@ export default function App() {
       .then(({ data: rows }) => setAuthorized(!!(rows && rows.length > 0)))
   }, [session])
 
-  // Parallel data fetch
+  // Fetch all JSONs — called on mount and manually via Atualizar button
+  const fetchAllData = useCallback(async (isManual = false) => {
+    if (!isManual) setDataLoading(true)
+    setRefreshing(true)
+    try {
+      const [mentions, socialMetrics, socialSentiment, geoElectoral, adversarios, kpis, entregas] =
+        await Promise.all([
+          fetch(BASE + 'mention_history.json').then(r => r.json()).catch(() => []),
+          fetch(BASE + 'social_metrics.json').then(r => r.json()).catch(() => ({})),
+          fetch(BASE + 'social_sentiment.json').then(r => r.json()).catch(() => ({})),
+          fetch(BASE + 'geo_electoral.json').then(r => r.json()).catch(() => ({})),
+          fetch(BASE + 'adversarios.json').then(r => r.json()).catch(() => ({})),
+          fetch(BASE + 'campaign_kpis.json').then(r => r.json()).catch(() => ({})),
+          fetch(BASE + 'entregas_municipios.json').then(r => r.json()).catch(() => ({})),
+        ])
+      setData({ mentions, socialMetrics, socialSentiment, geoElectoral, adversarios, kpis, entregas })
+      if (isManual) {
+        const hora = new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })
+        setToast({ message: `✓ Dados atualizados — ${hora}`, type: 'success' })
+      }
+    } catch {
+      if (isManual) {
+        setToast({ message: 'Erro ao atualizar — tente novamente', type: 'error' })
+      }
+    } finally {
+      if (!isManual) setDataLoading(false)
+      setRefreshing(false)
+    }
+  }, [])
+
+  // Parallel data fetch on mount / auth change
   useEffect(() => {
     if (!session || authorized === false || authorized === null) return
-    setDataLoading(true)
-    Promise.all([
-      fetch(BASE + 'mention_history.json').then(r => r.json()).catch(() => []),
-      fetch(BASE + 'social_metrics.json').then(r => r.json()).catch(() => ({})),
-      fetch(BASE + 'social_sentiment.json').then(r => r.json()).catch(() => ({})),
-      fetch(BASE + 'geo_electoral.json').then(r => r.json()).catch(() => ({})),
-      fetch(BASE + 'adversarios.json').then(r => r.json()).catch(() => ({})),
-      fetch(BASE + 'campaign_kpis.json').then(r => r.json()).catch(() => ({})),
-      fetch(BASE + 'entregas_municipios.json').then(r => r.json()).catch(() => ({})),
-    ]).then(([mentions, socialMetrics, socialSentiment, geoElectoral, adversarios, kpis, entregas]) => {
-      setData({ mentions, socialMetrics, socialSentiment, geoElectoral, adversarios, kpis, entregas })
-    }).finally(() => setDataLoading(false))
-  }, [session, authorized])
+    fetchAllData(false)
+  }, [session, authorized, fetchAllData])
 
   const handleLogout = useCallback(async () => {
     if (!DEV_BYPASS) await supabase.auth.signOut()
@@ -1637,9 +1689,16 @@ export default function App() {
           <h1>Monitor Eduardo Gomes</h1>
           <div className="subtitle">Inteligência Eleitoral · Campanha 2026 · PL-TO</div>
         </div>
-        <button className="btn-logout" onClick={handleLogout}>
-          <LogOut size={14} /> Sair
-        </button>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <button className="btn-refresh" onClick={() => fetchAllData(true)} disabled={refreshing}
+            aria-label="Atualizar dados">
+            <RefreshCw size={14} style={refreshing ? { animation: 'spin 1s linear infinite' } : {}} />
+            {refreshing ? 'Atualizando…' : 'Atualizar'}
+          </button>
+          <button className="btn-logout" onClick={handleLogout}>
+            <LogOut size={14} /> Sair
+          </button>
+        </div>
       </header>
 
       {/* Ticker — marquee menções recentes (abaixo do header, acima da intel strip) */}
@@ -1691,6 +1750,13 @@ export default function App() {
           </button>
         ))}
       </nav>
+
+      {/* Toast notification */}
+      {toast && (
+        <div className="toast" style={{ background: toast.type === 'success' ? 'var(--success)' : 'var(--danger)' }}>
+          {toast.message}
+        </div>
+      )}
     </>
   )
 }
