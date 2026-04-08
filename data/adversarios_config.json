@@ -1,0 +1,59 @@
+{
+  "adversarios": [
+    {
+      "nome": "Vicentinho Junior",
+      "partido": "PP",
+      "instagram": "vicentinhojuniorpp",
+      "votos_2022": 52000,
+      "cargo_2022": "federal",
+      "sobreposicao": 0.65,
+      "nivel_base": 60,
+      "rejeicao_estimada": 10,
+      "nota": ""
+    },
+    {
+      "nome": "Iraja Abreu",
+      "partido": "PSD",
+      "instagram": "irajatocantins",
+      "votos_2022": 180000,
+      "cargo_2022": "senado",
+      "sobreposicao": 0.80,
+      "nivel_base": 55,
+      "rejeicao_estimada": 19,
+      "nota": "Alta rejeicao 19% limita crescimento"
+    },
+    {
+      "nome": "Alexandre Guimaraes",
+      "partido": "MDB",
+      "instagram": "alexandreguimaraesmdb",
+      "votos_2022": 35000,
+      "cargo_2022": "federal",
+      "sobreposicao": 0.50,
+      "nivel_base": 45,
+      "rejeicao_estimada": 5,
+      "nota": "ATENCAO: menor rejeicao do campo (5%), candidato renovacao, risco crescente"
+    },
+    {
+      "nome": "Ronaldo Dimas",
+      "partido": "PL",
+      "instagram": "ronaldo.dimas.oficial",
+      "votos_2022": 42000,
+      "cargo_2022": "federal",
+      "sobreposicao": 0.40,
+      "nivel_base": 35,
+      "rejeicao_estimada": 8,
+      "nota": "Risco interno PL"
+    },
+    {
+      "nome": "Paulo Mourao",
+      "partido": "PT",
+      "instagram": "paulomouraooficial",
+      "votos_2022": 28000,
+      "cargo_2022": "estadual",
+      "sobreposicao": 0.25,
+      "nivel_base": 30,
+      "rejeicao_estimada": 10,
+      "nota": ""
+    }
+  ]
+}
