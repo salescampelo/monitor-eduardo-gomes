@@ -1,1 +1,1197 @@
-{"_info": "Gerado por entregas_collector.py --mock"}
+{
+  "updated_at": "2026-04-08T14:25:00",
+  "autor": "Eduardo Gomes",
+  "anos_coletados": [
+    2023,
+    2024,
+    2025
+  ],
+  "resumo": {
+    "total_emendas": 77,
+    "total_municipios_beneficiados": 20,
+    "valor_total_pago_R$": 134261560.83
+  },
+  "municipios": {
+    "1700251": {
+      "codigo_ibge": "1700251",
+      "nome": "Abreulândia",
+      "uf": "TO",
+      "emendas": [
+        {
+          "numero": "22024-00000",
+          "codigo": "EMD202400000",
+          "ano": 2024,
+          "tipo": "Individual",
+          "funcao": "Infraestrutura",
+          "valor_empenhado": 1240354.59,
+          "valor_liquidado": 731066.43,
+          "valor_pago": 648649.44,
+          "beneficiario": "Prefeitura Municipal de Abreulândia",
+          "descricao_acao": "Acao de Segurança em Abreulândia",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22024-00001",
+          "codigo": "EMD202400001",
+          "ano": 2024,
+          "tipo": "Bancada",
+          "funcao": "Educação",
+          "valor_empenhado": 2794819.24,
+          "valor_liquidado": 2376278.57,
+          "valor_pago": 2051858.19,
+          "beneficiario": "Prefeitura Municipal de Abreulândia",
+          "descricao_acao": "Acao de Saneamento em Abreulândia",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22025-00002",
+          "codigo": "EMD202500002",
+          "ano": 2025,
+          "tipo": "Individual",
+          "funcao": "Saneamento",
+          "valor_empenhado": 3182115.49,
+          "valor_liquidado": 1935827.73,
+          "valor_pago": 1907370.86,
+          "beneficiario": "Prefeitura Municipal de Abreulândia",
+          "descricao_acao": "Acao de Segurança em Abreulândia",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22023-00003",
+          "codigo": "EMD202300003",
+          "ano": 2023,
+          "tipo": "Individual",
+          "funcao": "Saúde",
+          "valor_empenhado": 1015699.71,
+          "valor_liquidado": 843319.17,
+          "valor_pago": 824340.33,
+          "beneficiario": "Prefeitura Municipal de Abreulândia",
+          "descricao_acao": "Acao de Segurança em Abreulândia",
+          "collected_at": "2026-04-08T14:25:00"
+        }
+      ],
+      "valor_total": 5432218.82,
+      "score_entrega": 55.28
+    },
+    "1700301": {
+      "codigo_ibge": "1700301",
+      "nome": "Aguiarnópolis",
+      "uf": "TO",
+      "emendas": [
+        {
+          "numero": "22025-00010",
+          "codigo": "EMD202500010",
+          "ano": 2025,
+          "tipo": "Individual",
+          "funcao": "Assistência Social",
+          "valor_empenhado": 3940025.75,
+          "valor_liquidado": 2894025.84,
+          "valor_pago": 2634702.05,
+          "beneficiario": "Prefeitura Municipal de Aguiarnópolis",
+          "descricao_acao": "Acao de Saúde em Aguiarnópolis",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22024-00011",
+          "codigo": "EMD202400011",
+          "ano": 2024,
+          "tipo": "Bancada",
+          "funcao": "Assistência Social",
+          "valor_empenhado": 1257692.73,
+          "valor_liquidado": 1251133.85,
+          "valor_pago": 1163737.77,
+          "beneficiario": "Prefeitura Municipal de Aguiarnópolis",
+          "descricao_acao": "Acao de Educação em Aguiarnópolis",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22025-00012",
+          "codigo": "EMD202500012",
+          "ano": 2025,
+          "tipo": "Individual",
+          "funcao": "Segurança",
+          "valor_empenhado": 2474692.14,
+          "valor_liquidado": 1300843.95,
+          "valor_pago": 1130915.95,
+          "beneficiario": "Prefeitura Municipal de Aguiarnópolis",
+          "descricao_acao": "Acao de Saneamento em Aguiarnópolis",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22025-00013",
+          "codigo": "EMD202500013",
+          "ano": 2025,
+          "tipo": "Individual",
+          "funcao": "Saúde",
+          "valor_empenhado": 4646780.76,
+          "valor_liquidado": 2736083.62,
+          "valor_pago": 2532188.8,
+          "beneficiario": "Prefeitura Municipal de Aguiarnópolis",
+          "descricao_acao": "Acao de Saúde em Aguiarnópolis",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22023-00014",
+          "codigo": "EMD202300014",
+          "ano": 2023,
+          "tipo": "Bancada",
+          "funcao": "Segurança",
+          "valor_empenhado": 1104579.96,
+          "valor_liquidado": 929981.61,
+          "valor_pago": 848936.93,
+          "beneficiario": "Prefeitura Municipal de Aguiarnópolis",
+          "descricao_acao": "Acao de Saúde em Aguiarnópolis",
+          "collected_at": "2026-04-08T14:25:00"
+        }
+      ],
+      "valor_total": 8310481.5,
+      "score_entrega": 67.27
+    },
+    "1700350": {
+      "codigo_ibge": "1700350",
+      "nome": "Aliança do Tocantins",
+      "uf": "TO",
+      "emendas": [
+        {
+          "numero": "22024-00020",
+          "codigo": "EMD202400020",
+          "ano": 2024,
+          "tipo": "Bancada",
+          "funcao": "Educação",
+          "valor_empenhado": 3201737.13,
+          "valor_liquidado": 2210897.96,
+          "valor_pago": 1924304.6,
+          "beneficiario": "Prefeitura Municipal de Aliança do Tocantins",
+          "descricao_acao": "Acao de Saúde em Aliança do Tocantins",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22025-00021",
+          "codigo": "EMD202500021",
+          "ano": 2025,
+          "tipo": "Individual",
+          "funcao": "Infraestrutura",
+          "valor_empenhado": 1293745.34,
+          "valor_liquidado": 813491.92,
+          "valor_pago": 740774.0,
+          "beneficiario": "Prefeitura Municipal de Aliança do Tocantins",
+          "descricao_acao": "Acao de Segurança em Aliança do Tocantins",
+          "collected_at": "2026-04-08T14:25:00"
+        }
+      ],
+      "valor_total": 2665078.6,
+      "score_entrega": 35.38
+    },
+    "1700400": {
+      "codigo_ibge": "1700400",
+      "nome": "Almas",
+      "uf": "TO",
+      "emendas": [
+        {
+          "numero": "22023-00030",
+          "codigo": "EMD202300030",
+          "ano": 2023,
+          "tipo": "Individual",
+          "funcao": "Assistência Social",
+          "valor_empenhado": 915356.63,
+          "valor_liquidado": 853080.09,
+          "valor_pago": 801852.8,
+          "beneficiario": "Prefeitura Municipal de Almas",
+          "descricao_acao": "Acao de Saneamento em Almas",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22023-00031",
+          "codigo": "EMD202300031",
+          "ano": 2023,
+          "tipo": "Individual",
+          "funcao": "Saneamento",
+          "valor_empenhado": 753471.26,
+          "valor_liquidado": 430858.38,
+          "valor_pago": 377483.75,
+          "beneficiario": "Prefeitura Municipal de Almas",
+          "descricao_acao": "Acao de Educação em Almas",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22023-00032",
+          "codigo": "EMD202300032",
+          "ano": 2023,
+          "tipo": "Individual",
+          "funcao": "Infraestrutura",
+          "valor_empenhado": 4438024.23,
+          "valor_liquidado": 2927113.23,
+          "valor_pago": 2707199.3,
+          "beneficiario": "Prefeitura Municipal de Almas",
+          "descricao_acao": "Acao de Saúde em Almas",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22024-00033",
+          "codigo": "EMD202400033",
+          "ano": 2024,
+          "tipo": "Individual",
+          "funcao": "Infraestrutura",
+          "valor_empenhado": 1173974.11,
+          "valor_liquidado": 629478.72,
+          "valor_pago": 562223.42,
+          "beneficiario": "Prefeitura Municipal de Almas",
+          "descricao_acao": "Acao de Educação em Almas",
+          "collected_at": "2026-04-08T14:25:00"
+        }
+      ],
+      "valor_total": 4448759.27,
+      "score_entrega": 51.02
+    },
+    "1700707": {
+      "codigo_ibge": "1700707",
+      "nome": "Alvorada",
+      "uf": "TO",
+      "emendas": [
+        {
+          "numero": "22024-00040",
+          "codigo": "EMD202400040",
+          "ano": 2024,
+          "tipo": "Individual",
+          "funcao": "Assistência Social",
+          "valor_empenhado": 1882743.7,
+          "valor_liquidado": 1706115.97,
+          "valor_pago": 1548967.33,
+          "beneficiario": "Prefeitura Municipal de Alvorada",
+          "descricao_acao": "Acao de Saúde em Alvorada",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22023-00041",
+          "codigo": "EMD202300041",
+          "ano": 2023,
+          "tipo": "Bancada",
+          "funcao": "Saneamento",
+          "valor_empenhado": 4433971.3,
+          "valor_liquidado": 4263343.57,
+          "valor_pago": 4085344.72,
+          "beneficiario": "Prefeitura Municipal de Alvorada",
+          "descricao_acao": "Acao de Educação em Alvorada",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22024-00042",
+          "codigo": "EMD202400042",
+          "ano": 2024,
+          "tipo": "Individual",
+          "funcao": "Segurança",
+          "valor_empenhado": 4311835.57,
+          "valor_liquidado": 2643254.03,
+          "valor_pago": 2532224.18,
+          "beneficiario": "Prefeitura Municipal de Alvorada",
+          "descricao_acao": "Acao de Segurança em Alvorada",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22024-00043",
+          "codigo": "EMD202400043",
+          "ano": 2024,
+          "tipo": "Individual",
+          "funcao": "Saneamento",
+          "valor_empenhado": 1327438.61,
+          "valor_liquidado": 1200850.01,
+          "valor_pago": 1142181.9,
+          "beneficiario": "Prefeitura Municipal de Alvorada",
+          "descricao_acao": "Acao de Infraestrutura em Alvorada",
+          "collected_at": "2026-04-08T14:25:00"
+        }
+      ],
+      "valor_total": 9308718.13,
+      "score_entrega": 69.9
+    },
+    "1701002": {
+      "codigo_ibge": "1701002",
+      "nome": "Ananás",
+      "uf": "TO",
+      "emendas": [
+        {
+          "numero": "22023-00050",
+          "codigo": "EMD202300050",
+          "ano": 2023,
+          "tipo": "Individual",
+          "funcao": "Assistência Social",
+          "valor_empenhado": 4447855.28,
+          "valor_liquidado": 3160443.94,
+          "valor_pago": 3116667.37,
+          "beneficiario": "Prefeitura Municipal de Ananás",
+          "descricao_acao": "Acao de Infraestrutura em Ananás",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22025-00051",
+          "codigo": "EMD202500051",
+          "ano": 2025,
+          "tipo": "Individual",
+          "funcao": "Saneamento",
+          "valor_empenhado": 4410587.34,
+          "valor_liquidado": 3943515.32,
+          "valor_pago": 3667416.48,
+          "beneficiario": "Prefeitura Municipal de Ananás",
+          "descricao_acao": "Acao de Infraestrutura em Ananás",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22024-00052",
+          "codigo": "EMD202400052",
+          "ano": 2024,
+          "tipo": "Bancada",
+          "funcao": "Segurança",
+          "valor_empenhado": 4850136.26,
+          "valor_liquidado": 4428949.37,
+          "valor_pago": 3870516.31,
+          "beneficiario": "Prefeitura Municipal de Ananás",
+          "descricao_acao": "Acao de Segurança em Ananás",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22025-00053",
+          "codigo": "EMD202500053",
+          "ano": 2025,
+          "tipo": "Individual",
+          "funcao": "Saneamento",
+          "valor_empenhado": 4354721.8,
+          "valor_liquidado": 3524412.12,
+          "valor_pago": 3373651.37,
+          "beneficiario": "Prefeitura Municipal de Ananás",
+          "descricao_acao": "Acao de Infraestrutura em Ananás",
+          "collected_at": "2026-04-08T14:25:00"
+        }
+      ],
+      "valor_total": 14028251.53,
+      "score_entrega": 83.3
+    },
+    "1701051": {
+      "codigo_ibge": "1701051",
+      "nome": "Angico",
+      "uf": "TO",
+      "emendas": [
+        {
+          "numero": "22024-00060",
+          "codigo": "EMD202400060",
+          "ano": 2024,
+          "tipo": "Individual",
+          "funcao": "Segurança",
+          "valor_empenhado": 320263.21,
+          "valor_liquidado": 217024.63,
+          "valor_pago": 194087.34,
+          "beneficiario": "Prefeitura Municipal de Angico",
+          "descricao_acao": "Acao de Segurança em Angico",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22023-00061",
+          "codigo": "EMD202300061",
+          "ano": 2023,
+          "tipo": "Individual",
+          "funcao": "Saneamento",
+          "valor_empenhado": 4010614.89,
+          "valor_liquidado": 2528658.89,
+          "valor_pago": 2307418.7,
+          "beneficiario": "Prefeitura Municipal de Angico",
+          "descricao_acao": "Acao de Infraestrutura em Angico",
+          "collected_at": "2026-04-08T14:25:00"
+        }
+      ],
+      "valor_total": 2501506.04,
+      "score_entrega": 34.46
+    },
+    "1701101": {
+      "codigo_ibge": "1701101",
+      "nome": "Aparecida do Rio Negro",
+      "uf": "TO",
+      "emendas": [
+        {
+          "numero": "22024-00070",
+          "codigo": "EMD202400070",
+          "ano": 2024,
+          "tipo": "Individual",
+          "funcao": "Segurança",
+          "valor_empenhado": 317005.84,
+          "valor_liquidado": 238016.9,
+          "valor_pago": 209544.05,
+          "beneficiario": "Prefeitura Municipal de Aparecida do Rio Negro",
+          "descricao_acao": "Acao de Segurança em Aparecida do Rio Negro",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22023-00071",
+          "codigo": "EMD202300071",
+          "ano": 2023,
+          "tipo": "Individual",
+          "funcao": "Segurança",
+          "valor_empenhado": 2702245.01,
+          "valor_liquidado": 2439846.23,
+          "valor_pago": 2415359.3,
+          "beneficiario": "Prefeitura Municipal de Aparecida do Rio Negro",
+          "descricao_acao": "Acao de Segurança em Aparecida do Rio Negro",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22024-00072",
+          "codigo": "EMD202400072",
+          "ano": 2024,
+          "tipo": "Individual",
+          "funcao": "Educação",
+          "valor_empenhado": 2499715.06,
+          "valor_liquidado": 1913570.69,
+          "valor_pago": 1804440.84,
+          "beneficiario": "Prefeitura Municipal de Aparecida do Rio Negro",
+          "descricao_acao": "Acao de Segurança em Aparecida do Rio Negro",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22023-00073",
+          "codigo": "EMD202300073",
+          "ano": 2023,
+          "tipo": "Individual",
+          "funcao": "Saúde",
+          "valor_empenhado": 4997831.74,
+          "valor_liquidado": 4513983.36,
+          "valor_pago": 3888055.11,
+          "beneficiario": "Prefeitura Municipal de Aparecida do Rio Negro",
+          "descricao_acao": "Acao de Saneamento em Aparecida do Rio Negro",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22024-00074",
+          "codigo": "EMD202400074",
+          "ano": 2024,
+          "tipo": "Individual",
+          "funcao": "Educação",
+          "valor_empenhado": 2035364.41,
+          "valor_liquidado": 1584763.96,
+          "valor_pago": 1572477.17,
+          "beneficiario": "Prefeitura Municipal de Aparecida do Rio Negro",
+          "descricao_acao": "Acao de Saúde em Aparecida do Rio Negro",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22024-00075",
+          "codigo": "EMD202400075",
+          "ano": 2024,
+          "tipo": "Individual",
+          "funcao": "Educação",
+          "valor_empenhado": 2172698.75,
+          "valor_liquidado": 1273476.24,
+          "valor_pago": 1170481.74,
+          "beneficiario": "Prefeitura Municipal de Aparecida do Rio Negro",
+          "descricao_acao": "Acao de Saneamento em Aparecida do Rio Negro",
+          "collected_at": "2026-04-08T14:25:00"
+        }
+      ],
+      "valor_total": 11060358.21,
+      "score_entrega": 84.07
+    },
+    "1701309": {
+      "codigo_ibge": "1701309",
+      "nome": "Aragominas",
+      "uf": "TO",
+      "emendas": [
+        {
+          "numero": "22025-00080",
+          "codigo": "EMD202500080",
+          "ano": 2025,
+          "tipo": "Individual",
+          "funcao": "Infraestrutura",
+          "valor_empenhado": 2128404.71,
+          "valor_liquidado": 1662159.49,
+          "valor_pago": 1591113.08,
+          "beneficiario": "Prefeitura Municipal de Aragominas",
+          "descricao_acao": "Acao de Educação em Aragominas",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22024-00081",
+          "codigo": "EMD202400081",
+          "ano": 2024,
+          "tipo": "Individual",
+          "funcao": "Saneamento",
+          "valor_empenhado": 2476861.86,
+          "valor_liquidado": 2284095.09,
+          "valor_pago": 2181225.7,
+          "beneficiario": "Prefeitura Municipal de Aragominas",
+          "descricao_acao": "Acao de Assistência Social em Aragominas",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22025-00082",
+          "codigo": "EMD202500082",
+          "ano": 2025,
+          "tipo": "Individual",
+          "funcao": "Assistência Social",
+          "valor_empenhado": 4479550.82,
+          "valor_liquidado": 3306699.97,
+          "valor_pago": 2894758.73,
+          "beneficiario": "Prefeitura Municipal de Aragominas",
+          "descricao_acao": "Acao de Educação em Aragominas",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22024-00083",
+          "codigo": "EMD202400083",
+          "ano": 2024,
+          "tipo": "Individual",
+          "funcao": "Infraestrutura",
+          "valor_empenhado": 2758922.12,
+          "valor_liquidado": 1537916.09,
+          "valor_pago": 1490916.85,
+          "beneficiario": "Prefeitura Municipal de Aragominas",
+          "descricao_acao": "Acao de Segurança em Aragominas",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22025-00084",
+          "codigo": "EMD202500084",
+          "ano": 2025,
+          "tipo": "Individual",
+          "funcao": "Assistência Social",
+          "valor_empenhado": 318520.58,
+          "valor_liquidado": 267657.56,
+          "valor_pago": 238563.96,
+          "beneficiario": "Prefeitura Municipal de Aragominas",
+          "descricao_acao": "Acao de Infraestrutura em Aragominas",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22024-00085",
+          "codigo": "EMD202400085",
+          "ano": 2024,
+          "tipo": "Bancada",
+          "funcao": "Saúde",
+          "valor_empenhado": 1529225.66,
+          "valor_liquidado": 868716.71,
+          "valor_pago": 858291.36,
+          "beneficiario": "Prefeitura Municipal de Aragominas",
+          "descricao_acao": "Acao de Saúde em Aragominas",
+          "collected_at": "2026-04-08T14:25:00"
+        }
+      ],
+      "valor_total": 9254869.68,
+      "score_entrega": 76.67
+    },
+    "1701903": {
+      "codigo_ibge": "1701903",
+      "nome": "Araguacema",
+      "uf": "TO",
+      "emendas": [
+        {
+          "numero": "22025-00090",
+          "codigo": "EMD202500090",
+          "ano": 2025,
+          "tipo": "Bancada",
+          "funcao": "Saúde",
+          "valor_empenhado": 1380792.56,
+          "valor_liquidado": 1212003.76,
+          "valor_pago": 1059021.63,
+          "beneficiario": "Prefeitura Municipal de Araguacema",
+          "descricao_acao": "Acao de Segurança em Araguacema",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22024-00091",
+          "codigo": "EMD202400091",
+          "ano": 2024,
+          "tipo": "Individual",
+          "funcao": "Infraestrutura",
+          "valor_empenhado": 1379120.82,
+          "valor_liquidado": 819527.13,
+          "valor_pago": 756177.05,
+          "beneficiario": "Prefeitura Municipal de Araguacema",
+          "descricao_acao": "Acao de Segurança em Araguacema",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22024-00092",
+          "codigo": "EMD202400092",
+          "ano": 2024,
+          "tipo": "Individual",
+          "funcao": "Segurança",
+          "valor_empenhado": 632033.36,
+          "valor_liquidado": 606375.02,
+          "valor_pago": 585963.44,
+          "beneficiario": "Prefeitura Municipal de Araguacema",
+          "descricao_acao": "Acao de Infraestrutura em Araguacema",
+          "collected_at": "2026-04-08T14:25:00"
+        }
+      ],
+      "valor_total": 2401162.12,
+      "score_entrega": 43.08
+    },
+    "1702158": {
+      "codigo_ibge": "1702158",
+      "nome": "Araguanã",
+      "uf": "TO",
+      "emendas": [
+        {
+          "numero": "22025-00100",
+          "codigo": "EMD202500100",
+          "ano": 2025,
+          "tipo": "Individual",
+          "funcao": "Educação",
+          "valor_empenhado": 682876.13,
+          "valor_liquidado": 572890.12,
+          "valor_pago": 549236.74,
+          "beneficiario": "Prefeitura Municipal de Araguanã",
+          "descricao_acao": "Acao de Assistência Social em Araguanã",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22023-00101",
+          "codigo": "EMD202300101",
+          "ano": 2023,
+          "tipo": "Individual",
+          "funcao": "Segurança",
+          "valor_empenhado": 455496.01,
+          "valor_liquidado": 344521.94,
+          "valor_pago": 312442.39,
+          "beneficiario": "Prefeitura Municipal de Araguanã",
+          "descricao_acao": "Acao de Educação em Araguanã",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22025-00102",
+          "codigo": "EMD202500102",
+          "ano": 2025,
+          "tipo": "Individual",
+          "funcao": "Infraestrutura",
+          "valor_empenhado": 3158845.34,
+          "valor_liquidado": 3109295.29,
+          "valor_pago": 2718041.22,
+          "beneficiario": "Prefeitura Municipal de Araguanã",
+          "descricao_acao": "Acao de Segurança em Araguanã",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22024-00103",
+          "codigo": "EMD202400103",
+          "ano": 2024,
+          "tipo": "Bancada",
+          "funcao": "Segurança",
+          "valor_empenhado": 1183554.04,
+          "valor_liquidado": 698045.61,
+          "valor_pago": 604975.45,
+          "beneficiario": "Prefeitura Municipal de Araguanã",
+          "descricao_acao": "Acao de Assistência Social em Araguanã",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22025-00104",
+          "codigo": "EMD202500104",
+          "ano": 2025,
+          "tipo": "Individual",
+          "funcao": "Educação",
+          "valor_empenhado": 4670042.26,
+          "valor_liquidado": 2874631.23,
+          "valor_pago": 2838761.46,
+          "beneficiario": "Prefeitura Municipal de Araguanã",
+          "descricao_acao": "Acao de Assistência Social em Araguanã",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22024-00105",
+          "codigo": "EMD202400105",
+          "ano": 2024,
+          "tipo": "Individual",
+          "funcao": "Educação",
+          "valor_empenhado": 3745115.66,
+          "valor_liquidado": 3000690.03,
+          "valor_pago": 2951322.13,
+          "beneficiario": "Prefeitura Municipal de Araguanã",
+          "descricao_acao": "Acao de Saneamento em Araguanã",
+          "collected_at": "2026-04-08T14:25:00"
+        }
+      ],
+      "valor_total": 9974779.39,
+      "score_entrega": 79.98
+    },
+    "1702208": {
+      "codigo_ibge": "1702208",
+      "nome": "Araguatins",
+      "uf": "TO",
+      "emendas": [
+        {
+          "numero": "22024-00110",
+          "codigo": "EMD202400110",
+          "ano": 2024,
+          "tipo": "Individual",
+          "funcao": "Educação",
+          "valor_empenhado": 1772962.86,
+          "valor_liquidado": 926905.51,
+          "valor_pago": 843001.08,
+          "beneficiario": "Prefeitura Municipal de Araguatins",
+          "descricao_acao": "Acao de Educação em Araguatins",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22023-00111",
+          "codigo": "EMD202300111",
+          "ano": 2023,
+          "tipo": "Individual",
+          "funcao": "Saneamento",
+          "valor_empenhado": 4440493.15,
+          "valor_liquidado": 4017942.66,
+          "valor_pago": 3593486.34,
+          "beneficiario": "Prefeitura Municipal de Araguatins",
+          "descricao_acao": "Acao de Saneamento em Araguatins",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22023-00112",
+          "codigo": "EMD202300112",
+          "ano": 2023,
+          "tipo": "Individual",
+          "funcao": "Segurança",
+          "valor_empenhado": 489385.13,
+          "valor_liquidado": 284811.03,
+          "valor_pago": 271291.92,
+          "beneficiario": "Prefeitura Municipal de Araguatins",
+          "descricao_acao": "Acao de Infraestrutura em Araguatins",
+          "collected_at": "2026-04-08T14:25:00"
+        }
+      ],
+      "valor_total": 4707779.34,
+      "score_entrega": 49.49
+    },
+    "1702000": {
+      "codigo_ibge": "1702000",
+      "nome": "Araguaçu",
+      "uf": "TO",
+      "emendas": [
+        {
+          "numero": "22024-00120",
+          "codigo": "EMD202400120",
+          "ano": 2024,
+          "tipo": "Individual",
+          "funcao": "Infraestrutura",
+          "valor_empenhado": 4125279.21,
+          "valor_liquidado": 3321412.12,
+          "valor_pago": 3096208.6,
+          "beneficiario": "Prefeitura Municipal de Araguaçu",
+          "descricao_acao": "Acao de Segurança em Araguaçu",
+          "collected_at": "2026-04-08T14:25:00"
+        }
+      ],
+      "valor_total": 3096208.6,
+      "score_entrega": 36.34
+    },
+    "1702109": {
+      "codigo_ibge": "1702109",
+      "nome": "Araguaína",
+      "uf": "TO",
+      "emendas": [
+        {
+          "numero": "22024-00130",
+          "codigo": "EMD202400130",
+          "ano": 2024,
+          "tipo": "Bancada",
+          "funcao": "Saúde",
+          "valor_empenhado": 2707679.62,
+          "valor_liquidado": 2573976.75,
+          "valor_pago": 2275844.37,
+          "beneficiario": "Prefeitura Municipal de Araguaína",
+          "descricao_acao": "Acao de Educação em Araguaína",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22023-00131",
+          "codigo": "EMD202300131",
+          "ano": 2023,
+          "tipo": "Bancada",
+          "funcao": "Saúde",
+          "valor_empenhado": 3344688.26,
+          "valor_liquidado": 1946333.35,
+          "valor_pago": 1819971.94,
+          "beneficiario": "Prefeitura Municipal de Araguaína",
+          "descricao_acao": "Acao de Assistência Social em Araguaína",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22023-00132",
+          "codigo": "EMD202300132",
+          "ano": 2023,
+          "tipo": "Individual",
+          "funcao": "Saúde",
+          "valor_empenhado": 4236977.74,
+          "valor_liquidado": 2397610.91,
+          "valor_pago": 2380839.57,
+          "beneficiario": "Prefeitura Municipal de Araguaína",
+          "descricao_acao": "Acao de Infraestrutura em Araguaína",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22023-00133",
+          "codigo": "EMD202300133",
+          "ano": 2023,
+          "tipo": "Individual",
+          "funcao": "Assistência Social",
+          "valor_empenhado": 3024844.68,
+          "valor_liquidado": 2163715.01,
+          "valor_pago": 1840202.72,
+          "beneficiario": "Prefeitura Municipal de Araguaína",
+          "descricao_acao": "Acao de Saneamento em Araguaína",
+          "collected_at": "2026-04-08T14:25:00"
+        }
+      ],
+      "valor_total": 8316858.6,
+      "score_entrega": 62.45
+    },
+    "1702307": {
+      "codigo_ibge": "1702307",
+      "nome": "Arapoema",
+      "uf": "TO",
+      "emendas": [
+        {
+          "numero": "22023-00140",
+          "codigo": "EMD202300140",
+          "ano": 2023,
+          "tipo": "Bancada",
+          "funcao": "Assistência Social",
+          "valor_empenhado": 1078490.22,
+          "valor_liquidado": 665059.84,
+          "valor_pago": 608662.69,
+          "beneficiario": "Prefeitura Municipal de Arapoema",
+          "descricao_acao": "Acao de Saúde em Arapoema",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22024-00141",
+          "codigo": "EMD202400141",
+          "ano": 2024,
+          "tipo": "Individual",
+          "funcao": "Segurança",
+          "valor_empenhado": 2659222.94,
+          "valor_liquidado": 1638906.84,
+          "valor_pago": 1533905.81,
+          "beneficiario": "Prefeitura Municipal de Arapoema",
+          "descricao_acao": "Acao de Saúde em Arapoema",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22024-00142",
+          "codigo": "EMD202400142",
+          "ano": 2024,
+          "tipo": "Bancada",
+          "funcao": "Segurança",
+          "valor_empenhado": 3173511.55,
+          "valor_liquidado": 3024719.5,
+          "valor_pago": 2649765.39,
+          "beneficiario": "Prefeitura Municipal de Arapoema",
+          "descricao_acao": "Acao de Educação em Arapoema",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22023-00143",
+          "codigo": "EMD202300143",
+          "ano": 2023,
+          "tipo": "Individual",
+          "funcao": "Educação",
+          "valor_empenhado": 4252235.4,
+          "valor_liquidado": 2671527.91,
+          "valor_pago": 2531862.98,
+          "beneficiario": "Prefeitura Municipal de Arapoema",
+          "descricao_acao": "Acao de Educação em Arapoema",
+          "collected_at": "2026-04-08T14:25:00"
+        }
+      ],
+      "valor_total": 7324196.87,
+      "score_entrega": 60.57
+    },
+    "1702406": {
+      "codigo_ibge": "1702406",
+      "nome": "Arraias",
+      "uf": "TO",
+      "emendas": [
+        {
+          "numero": "22023-00150",
+          "codigo": "EMD202300150",
+          "ano": 2023,
+          "tipo": "Individual",
+          "funcao": "Educação",
+          "valor_empenhado": 3529358.61,
+          "valor_liquidado": 2507604.39,
+          "valor_pago": 2328701.71,
+          "beneficiario": "Prefeitura Municipal de Arraias",
+          "descricao_acao": "Acao de Infraestrutura em Arraias",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22024-00151",
+          "codigo": "EMD202400151",
+          "ano": 2024,
+          "tipo": "Individual",
+          "funcao": "Saúde",
+          "valor_empenhado": 3905457.77,
+          "valor_liquidado": 2605309.53,
+          "valor_pago": 2288408.31,
+          "beneficiario": "Prefeitura Municipal de Arraias",
+          "descricao_acao": "Acao de Saneamento em Arraias",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22023-00152",
+          "codigo": "EMD202300152",
+          "ano": 2023,
+          "tipo": "Individual",
+          "funcao": "Infraestrutura",
+          "valor_empenhado": 1781398.06,
+          "valor_liquidado": 1714781.27,
+          "valor_pago": 1628109.58,
+          "beneficiario": "Prefeitura Municipal de Arraias",
+          "descricao_acao": "Acao de Segurança em Arraias",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22024-00153",
+          "codigo": "EMD202400153",
+          "ano": 2024,
+          "tipo": "Individual",
+          "funcao": "Saúde",
+          "valor_empenhado": 347641.08,
+          "valor_liquidado": 266000.08,
+          "valor_pago": 233930.05,
+          "beneficiario": "Prefeitura Municipal de Arraias",
+          "descricao_acao": "Acao de Educação em Arraias",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22024-00154",
+          "codigo": "EMD202400154",
+          "ano": 2024,
+          "tipo": "Individual",
+          "funcao": "Saneamento",
+          "valor_empenhado": 2129419.62,
+          "valor_liquidado": 1806380.4,
+          "valor_pago": 1679262.58,
+          "beneficiario": "Prefeitura Municipal de Arraias",
+          "descricao_acao": "Acao de Saúde em Arraias",
+          "collected_at": "2026-04-08T14:25:00"
+        }
+      ],
+      "valor_total": 8158412.23,
+      "score_entrega": 69.19
+    },
+    "1702554": {
+      "codigo_ibge": "1702554",
+      "nome": "Augustinópolis",
+      "uf": "TO",
+      "emendas": [
+        {
+          "numero": "22024-00160",
+          "codigo": "EMD202400160",
+          "ano": 2024,
+          "tipo": "Bancada",
+          "funcao": "Saúde",
+          "valor_empenhado": 1388519.17,
+          "valor_liquidado": 1116554.52,
+          "valor_pago": 1088890.22,
+          "beneficiario": "Prefeitura Municipal de Augustinópolis",
+          "descricao_acao": "Acao de Infraestrutura em Augustinópolis",
+          "collected_at": "2026-04-08T14:25:00"
+        }
+      ],
+      "valor_total": 1088890.22,
+      "score_entrega": 31.63
+    },
+    "1702703": {
+      "codigo_ibge": "1702703",
+      "nome": "Aurora do Tocantins",
+      "uf": "TO",
+      "emendas": [
+        {
+          "numero": "22024-00170",
+          "codigo": "EMD202400170",
+          "ano": 2024,
+          "tipo": "Individual",
+          "funcao": "Educação",
+          "valor_empenhado": 1451299.04,
+          "valor_liquidado": 836992.67,
+          "valor_pago": 720742.06,
+          "beneficiario": "Prefeitura Municipal de Aurora do Tocantins",
+          "descricao_acao": "Acao de Educação em Aurora do Tocantins",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22023-00171",
+          "codigo": "EMD202300171",
+          "ano": 2023,
+          "tipo": "Individual",
+          "funcao": "Saneamento",
+          "valor_empenhado": 1914733.65,
+          "valor_liquidado": 1202375.55,
+          "valor_pago": 1191809.05,
+          "beneficiario": "Prefeitura Municipal de Aurora do Tocantins",
+          "descricao_acao": "Acao de Saúde em Aurora do Tocantins",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22025-00172",
+          "codigo": "EMD202500172",
+          "ano": 2025,
+          "tipo": "Individual",
+          "funcao": "Saneamento",
+          "valor_empenhado": 2348482.79,
+          "valor_liquidado": 1986669.93,
+          "valor_pago": 1978522.34,
+          "beneficiario": "Prefeitura Municipal de Aurora do Tocantins",
+          "descricao_acao": "Acao de Saneamento em Aurora do Tocantins",
+          "collected_at": "2026-04-08T14:25:00"
+        }
+      ],
+      "valor_total": 3891073.45,
+      "score_entrega": 46.52
+    },
+    "1702901": {
+      "codigo_ibge": "1702901",
+      "nome": "Axixá do Tocantins",
+      "uf": "TO",
+      "emendas": [
+        {
+          "numero": "22024-00180",
+          "codigo": "EMD202400180",
+          "ano": 2024,
+          "tipo": "Individual",
+          "funcao": "Saúde",
+          "valor_empenhado": 3908069.25,
+          "valor_liquidado": 3721083.91,
+          "valor_pago": 3309619.54,
+          "beneficiario": "Prefeitura Municipal de Axixá do Tocantins",
+          "descricao_acao": "Acao de Infraestrutura em Axixá do Tocantins",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22025-00181",
+          "codigo": "EMD202500181",
+          "ano": 2025,
+          "tipo": "Individual",
+          "funcao": "Assistência Social",
+          "valor_empenhado": 1444332.28,
+          "valor_liquidado": 1394012.68,
+          "valor_pago": 1230851.75,
+          "beneficiario": "Prefeitura Municipal de Axixá do Tocantins",
+          "descricao_acao": "Acao de Saúde em Axixá do Tocantins",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22024-00182",
+          "codigo": "EMD202400182",
+          "ano": 2024,
+          "tipo": "Bancada",
+          "funcao": "Segurança",
+          "valor_empenhado": 4418618.45,
+          "valor_liquidado": 3582058.96,
+          "valor_pago": 3175372.11,
+          "beneficiario": "Prefeitura Municipal de Axixá do Tocantins",
+          "descricao_acao": "Acao de Saneamento em Axixá do Tocantins",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22025-00183",
+          "codigo": "EMD202500183",
+          "ano": 2025,
+          "tipo": "Bancada",
+          "funcao": "Saúde",
+          "valor_empenhado": 379230.19,
+          "valor_liquidado": 330632.72,
+          "valor_pago": 284888.18,
+          "beneficiario": "Prefeitura Municipal de Axixá do Tocantins",
+          "descricao_acao": "Acao de Segurança em Axixá do Tocantins",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22023-00184",
+          "codigo": "EMD202300184",
+          "ano": 2023,
+          "tipo": "Bancada",
+          "funcao": "Saneamento",
+          "valor_empenhado": 1626802.75,
+          "valor_liquidado": 1435301.36,
+          "valor_pago": 1414223.65,
+          "beneficiario": "Prefeitura Municipal de Axixá do Tocantins",
+          "descricao_acao": "Acao de Infraestrutura em Axixá do Tocantins",
+          "collected_at": "2026-04-08T14:25:00"
+        }
+      ],
+      "valor_total": 9414955.23,
+      "score_entrega": 75.83
+    },
+    "1703008": {
+      "codigo_ibge": "1703008",
+      "nome": "Babaçulândia",
+      "uf": "TO",
+      "emendas": [
+        {
+          "numero": "22023-00190",
+          "codigo": "EMD202300190",
+          "ano": 2023,
+          "tipo": "Individual",
+          "funcao": "Infraestrutura",
+          "valor_empenhado": 3143371.91,
+          "valor_liquidado": 2411885.98,
+          "valor_pago": 2365406.77,
+          "beneficiario": "Prefeitura Municipal de Babaçulândia",
+          "descricao_acao": "Acao de Saneamento em Babaçulândia",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22023-00191",
+          "codigo": "EMD202300191",
+          "ano": 2023,
+          "tipo": "Bancada",
+          "funcao": "Infraestrutura",
+          "valor_empenhado": 620170.16,
+          "valor_liquidado": 597001.29,
+          "valor_pago": 548086.37,
+          "beneficiario": "Prefeitura Municipal de Babaçulândia",
+          "descricao_acao": "Acao de Assistência Social em Babaçulândia",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22023-00192",
+          "codigo": "EMD202300192",
+          "ano": 2023,
+          "tipo": "Individual",
+          "funcao": "Saneamento",
+          "valor_empenhado": 3573665.93,
+          "valor_liquidado": 1871804.6,
+          "valor_pago": 1614510.34,
+          "beneficiario": "Prefeitura Municipal de Babaçulândia",
+          "descricao_acao": "Acao de Educação em Babaçulândia",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22024-00193",
+          "codigo": "EMD202400193",
+          "ano": 2024,
+          "tipo": "Individual",
+          "funcao": "Saúde",
+          "valor_empenhado": 4451002.79,
+          "valor_liquidado": 3689165.07,
+          "valor_pago": 3456047.2,
+          "beneficiario": "Prefeitura Municipal de Babaçulândia",
+          "descricao_acao": "Acao de Infraestrutura em Babaçulândia",
+          "collected_at": "2026-04-08T14:25:00"
+        },
+        {
+          "numero": "22023-00194",
+          "codigo": "EMD202300194",
+          "ano": 2023,
+          "tipo": "Bancada",
+          "funcao": "Infraestrutura",
+          "valor_empenhado": 1257285.14,
+          "valor_liquidado": 1031077.5,
+          "valor_pago": 892952.32,
+          "beneficiario": "Prefeitura Municipal de Babaçulândia",
+          "descricao_acao": "Acao de Educação em Babaçulândia",
+          "collected_at": "2026-04-08T14:25:00"
+        }
+      ],
+      "valor_total": 8877003.0,
+      "score_entrega": 70.73
+    }
+  }
+}
