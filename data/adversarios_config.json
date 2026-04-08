@@ -1,15 +1,28 @@
 {
   "adversarios": [
     {
-      "nome": "Vicentinho Junior",
-      "partido": "PP",
-      "instagram": "vicentinhojunior",
-      "votos_2022": 52000,
-      "cargo_2022": "federal",
-      "sobreposicao": 0.65,
-      "nivel_base": 60,
-      "rejeicao_estimada": 10,
-      "nota": ""
+      "nome": "Wanderlei Barbosa",
+      "partido": "Republicanos",
+      "instagram": "wanderlei__barbosa",
+      "votos_2022": 620000,
+      "cargo_2022": "estadual",
+      "sobreposicao": 0.75,
+      "nivel_base": 70,
+      "rejeicao_estimada": 18,
+      "relacao": "aliado_concorrente",
+      "nota": "Governador atual TO. Aliado declarado. Risco: se migrar ao Senado, disputa a mesma vaga. Monitorar movimento."
+    },
+    {
+      "nome": "Carlos Gaguim",
+      "partido": "Uniao Brasil",
+      "instagram": "carlosgaguim",
+      "votos_2022": 0,
+      "cargo_2022": "estadual",
+      "sobreposicao": 0.55,
+      "nivel_base": 50,
+      "rejeicao_estimada": 15,
+      "relacao": "aliado_concorrente",
+      "nota": "Confirmado na chapa majoritaria. Concorre pela 2a vaga junto com Eduardo Gomes. Ex-governador TO."
     },
     {
       "nome": "Iraja Abreu",
@@ -20,7 +33,8 @@
       "sobreposicao": 0.80,
       "nivel_base": 55,
       "rejeicao_estimada": 19,
-      "nota": "Alta rejeicao 19% limita crescimento"
+      "relacao": "adversario",
+      "nota": "Oposicao declarada ao governador Wanderlei. Alta rejeicao 19% limita crescimento."
     },
     {
       "nome": "Alexandre Guimaraes",
@@ -31,18 +45,32 @@
       "sobreposicao": 0.50,
       "nivel_base": 45,
       "rejeicao_estimada": 5,
-      "nota": "ATENCAO: menor rejeicao do campo (5%), candidato renovacao, risco crescente"
+      "relacao": "adversario",
+      "nota": "ATENCAO: menor rejeicao do campo (5%), candidato renovacao, risco crescente. Bloco Vicentinho+Cayres+Guimaraes."
     },
     {
-      "nome": "Ronaldo Dimas",
-      "partido": "PL",
-      "instagram": "ronaldodimastocantins",
-      "votos_2022": 42000,
+      "nome": "Vicentinho Junior",
+      "partido": "PSDB",
+      "instagram": "vicentinhojunior",
+      "votos_2022": 52000,
       "cargo_2022": "federal",
+      "sobreposicao": 0.65,
+      "nivel_base": 60,
+      "rejeicao_estimada": 10,
+      "relacao": "adversario",
+      "nota": "Migrou para governador. Lidera bloco adversario que inclui Guimaraes ao Senado."
+    },
+    {
+      "nome": "Vanderlei Luxemburgo",
+      "partido": "Podemos",
+      "instagram": "luxaoficial",
+      "votos_2022": 0,
+      "cargo_2022": "estadual",
       "sobreposicao": 0.40,
-      "nivel_base": 35,
-      "rejeicao_estimada": 8,
-      "nota": "Risco interno PL"
+      "nivel_base": 45,
+      "rejeicao_estimada": 12,
+      "relacao": "adversario",
+      "nota": "Candidatura independente confirmada pelo partido. Alta base digital (761k seguidores)."
     },
     {
       "nome": "Paulo Mourao",
@@ -53,29 +81,32 @@
       "sobreposicao": 0.25,
       "nivel_base": 30,
       "rejeicao_estimada": 10,
-      "nota": ""
+      "relacao": "adversario",
+      "nota": "Candidatura confirmada. Esquerda."
+    },
+    {
+      "nome": "Ronaldo Dimas",
+      "partido": "PL",
+      "instagram": "ronaldodimastocantins",
+      "votos_2022": 42000,
+      "cargo_2022": "federal",
+      "sobreposicao": 0.40,
+      "nivel_base": 35,
+      "rejeicao_estimada": 8,
+      "relacao": "adversario",
+      "nota": "Risco interno no proprio PL."
     },
     {
       "nome": "Katia Abreu",
-      "partido": "PSD",
+      "partido": "PP",
       "instagram": "senadorakatiaabreu",
       "votos_2022": 0,
       "cargo_2022": "federal",
       "sobreposicao": 0.70,
       "nivel_base": 65,
       "rejeicao_estimada": 22,
-      "nota": "Ex-senadora TO, alta rejeicao historica, forte base ruralista"
-    },
-    {
-      "nome": "Carlos Gaguim",
-      "partido": "PODE",
-      "instagram": "carlosgaguim",
-      "votos_2022": 0,
-      "cargo_2022": "estadual",
-      "sobreposicao": 0.55,
-      "nivel_base": 50,
-      "rejeicao_estimada": 15,
-      "nota": "Ex-governador TO"
+      "relacao": "adversario",
+      "nota": "Nao confirmou candidatura para 2026. Monitorar. Ex-senadora TO, alta rejeicao historica, forte base ruralista."
     },
     {
       "nome": "Celio Mourato",
@@ -86,29 +117,20 @@
       "sobreposicao": 0.30,
       "nivel_base": 25,
       "rejeicao_estimada": 8,
-      "nota": "Virtual candidato — base em construcao"
+      "relacao": "adversario",
+      "nota": "Virtual candidato. Base em construcao."
     },
     {
-      "nome": "Luxao",
-      "partido": "SOLID",
-      "instagram": "luxaoficial",
+      "nome": "Pastor Amarildo Martins",
+      "partido": "Sem partido",
+      "instagram": "",
       "votos_2022": 0,
-      "cargo_2022": "estadual",
-      "sobreposicao": 0.35,
-      "nivel_base": 30,
-      "rejeicao_estimada": 10,
-      "nota": "Virtual candidato"
-    },
-    {
-      "nome": "Wanderlei Barbosa",
-      "partido": "PL",
-      "instagram": "wanderlei__barbosa",
-      "votos_2022": 620000,
-      "cargo_2022": "estadual",
-      "sobreposicao": 0.75,
-      "nivel_base": 70,
-      "rejeicao_estimada": 18,
-      "nota": "Governador atual TO PL — potencial competidor por vaga no Senado"
+      "cargo_2022": "lider_religioso",
+      "sobreposicao": 0,
+      "nivel_base": 0,
+      "rejeicao_estimada": 0,
+      "relacao": "influencia",
+      "nota": "Presidente CONEMAD-TO. Assembleia de Deus Madureira presente nos 139 municipios. Negocia 2a vaga ao Senado no bloco Vicentinho+Cayres+Guimaraes para o segmento evangelico."
     }
   ]
 }
