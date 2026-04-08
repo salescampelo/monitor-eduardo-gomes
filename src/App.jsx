@@ -5,7 +5,7 @@ import {
 } from 'recharts'
 import {
   Newspaper, Users, MapPin, TrendingUp, Target, FileText, Package2,
-  LogOut, ChevronDown, ChevronUp, Download, Loader2, Shield
+  LogOut, ChevronDown, ChevronUp, Download, Loader2, Shield, Info, X
 } from 'lucide-react'
 
 // ─────────────────────────────────────────────────────────────
@@ -449,6 +449,45 @@ const GLOBAL_CSS = `
     justify-content: center; background: var(--bg);
   }
 
+  /* ── Info modal ── */
+  .info-modal-overlay {
+    position: fixed; inset: 0; z-index: 200;
+    background: rgba(0,0,0,0.45);
+    display: flex; align-items: center; justify-content: center;
+    padding: 20px;
+  }
+  .info-modal-card {
+    background: var(--surface); border-radius: 16px;
+    padding: 28px 28px 24px; max-width: 460px; width: 100%;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    position: relative;
+  }
+  .info-modal-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: var(--font-md); color: var(--primary);
+    margin-bottom: 12px; padding-right: 24px;
+  }
+  .info-modal-card p {
+    font-size: var(--font-sm); color: var(--text-muted);
+    line-height: 1.7; margin: 0;
+  }
+  .info-modal-close {
+    position: absolute; top: 16px; right: 16px;
+    background: none; border: none; cursor: pointer;
+    color: var(--text-muted); padding: 4px;
+    border-radius: 4px; display: flex; align-items: center;
+    transition: color 0.15s;
+  }
+  .info-modal-close:hover { color: var(--text); }
+  .info-btn {
+    background: none; border: none; cursor: pointer;
+    color: var(--text-muted); padding: 2px 4px;
+    display: inline-flex; align-items: center;
+    border-radius: 4px; transition: color 0.15s;
+    flex-shrink: 0;
+  }
+  .info-btn:hover { color: var(--primary); }
+
   /* ── Bottom nav (mobile only) ── */
   .bottom-nav { display: none; }
 
@@ -504,38 +543,70 @@ function useCountdown(target) {
 }
 
 // ─────────────────────────────────────────────────────────────
+// InfoModal — modal explicativo reutilizável
+// ─────────────────────────────────────────────────────────────
+function InfoModal({ title, body, onClose }) {
+  // Fecha ao clicar no overlay
+  return (
+    <div className="info-modal-overlay" onClick={onClose}>
+      <div className="info-modal-card" onClick={e => e.stopPropagation()}>
+        <button className="info-modal-close" onClick={onClose} aria-label="Fechar">
+          <X size={16} />
+        </button>
+        <h3>{title}</h3>
+        <p>{body}</p>
+      </div>
+    </div>
+  )
+}
+
+// ─────────────────────────────────────────────────────────────
 // ModulePanel — collapsible wrapper for every module
 // ─────────────────────────────────────────────────────────────
-function ModulePanel({ id, icon: Icon, title, badge, subtitle, children }) {
-  const [open, setOpen] = useState(false)
+function ModulePanel({ id, icon: Icon, title, badge, subtitle, info, children }) {
+  const [open,    setOpen]    = useState(false)
+  const [showInfo, setShowInfo] = useState(false)
   return (
-    <div className="module-panel" id={id}>
-      <div className="module-header" onClick={() => setOpen(o => !o)}>
-        <h2>
-          {Icon && <Icon size={18} color="var(--accent)" />}
-          {title}
-          {badge && (
-            <span className="badge" style={{ background: 'var(--accent)', color: '#1a1a1a', fontSize: 'var(--font-xs)' }}>
-              {badge}
-            </span>
-          )}
-        </h2>
-        {open
-          ? <ChevronUp size={18} color="var(--text-muted)" />
-          : <ChevronDown size={18} color="var(--text-muted)" />
-        }
-      </div>
-      {open && (
-        <div className="module-body">
-          {subtitle && (
-            <p style={{ fontSize: 'var(--font-xs)', color: 'var(--text-muted)', margin: '-8px 0 16px 0', fontStyle: 'italic' }}>
-              {subtitle}
-            </p>
-          )}
-          {children}
-        </div>
+    <>
+      {showInfo && info && (
+        <InfoModal title={info.title} body={info.body} onClose={() => setShowInfo(false)} />
       )}
-    </div>
+      <div className="module-panel" id={id}>
+        <div className="module-header" onClick={() => setOpen(o => !o)}>
+          <h2>
+            {Icon && <Icon size={18} color="var(--accent)" />}
+            {title}
+            {badge && (
+              <span className="badge" style={{ background: 'var(--accent)', color: '#1a1a1a', fontSize: 'var(--font-xs)' }}>
+                {badge}
+              </span>
+            )}
+          </h2>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+            {info && (
+              <button className="info-btn" aria-label="Sobre este módulo"
+                onClick={e => { e.stopPropagation(); setShowInfo(true) }}>
+                <Info size={16} />
+              </button>
+            )}
+            {open
+              ? <ChevronUp size={18} color="var(--text-muted)" />
+              : <ChevronDown size={18} color="var(--text-muted)" />
+            }
+          </div>
+        </div>
+        {open && (
+          <div className="module-body">
+            {subtitle && (
+              <p style={{ fontSize: 'var(--font-xs)', color: 'var(--text-muted)', margin: '-8px 0 16px 0', fontStyle: 'italic' }}>
+                {subtitle}
+              </p>
+            )}
+            {children}
+          </div>
+        )}
+      </div>
+    </>
   )
 }
 
@@ -557,7 +628,8 @@ function M1MonitorImprensa({ data }) {
 
   return (
     <ModulePanel id="m1" icon={Newspaper} title="Monitor de Imprensa"
-      subtitle="Menções ao Senador Eduardo Gomes na mídia — coletadas por Google News RSS em tempo real">
+      subtitle="Menções ao Senador Eduardo Gomes na mídia — coletadas por Google News RSS em tempo real"
+      info={{ title: 'Monitor de Imprensa', body: 'Coleta automática de notícias que mencionam o Senador Eduardo Gomes, rodando duas vezes ao dia. Cada menção recebe um score de relevância e um cluster temático, permitindo filtrar rapidamente o que importa do ruído.' }}>
       <div className="filter-bar">
         {clusters.map(c => (
           <button key={c} className={`filter-btn${clusterFilter === c ? ' active' : ''}`}
@@ -667,7 +739,8 @@ function M2RedesSociais({ metrics, sentiment }) {
 
   return (
     <ModulePanel id="m2" icon={Users} title="Redes Sociais"
-      subtitle="Métricas Instagram do senador e do campo adversário — atualização semanal via Apify">
+      subtitle="Métricas Instagram do senador e do campo adversário — atualização semanal via Apify"
+      info={{ title: 'Monitor de Redes Sociais', body: 'Acompanha semanalmente os perfis do senador e dos principais adversários no Instagram. Mostra seguidores, engajamento e variação semanal, separados por aliados e adversários.' }}>
       {!hasData ? (
         <div className="empty-state">
           <Users size={32} />
@@ -775,7 +848,8 @@ function M3InteligenciaMunicipal({ data }) {
 
   return (
     <ModulePanel id="m3" icon={MapPin} title="Inteligência Municipal"
-      subtitle="139 municípios do Tocantins ranqueados por potencial eleitoral — base TSE 2022 e entregas">
+      subtitle="139 municípios do Tocantins ranqueados por potencial eleitoral — base TSE 2022 e entregas"
+      info={{ title: 'Inteligência Municipal', body: 'Ranqueia os 139 municípios do Tocantins por potencial eleitoral, cruzando resultado das eleições de 2022 com o volume de emendas parlamentares destinadas pelo senador. Municípios vulneráveis sem entrega recebida são destacados como oportunidade estratégica.' }}>
       {municipios.length === 0 ? (
         <div className="empty-state">
           <MapPin size={32} />
@@ -879,7 +953,8 @@ function M4InteligenciaCompetitiva({ data }) {
 
   return (
     <ModulePanel id="m4" icon={TrendingUp} title="Radar Competitivo — Aliados e Adversários"
-      subtitle="Aliados, adversários e atores de influência — ordenados por ameaça e atualizado diariamente">
+      subtitle="Aliados, adversários e atores de influência — ordenados por ameaça e atualizado diariamente"
+      info={{ title: 'Radar Competitivo', body: 'Monitora aliados e adversários do campo eleitoral. O SAD (Score de Ameaça Dinâmico) é um índice de 0 a 100 que combina base eleitoral histórica, presença digital, sobreposição de eleitorado e rejeição nas pesquisas. Recalculado automaticamente a cada coleta.' }}>
       {todos.length === 0 ? (
         <div className="empty-state">
           <TrendingUp size={32} />
@@ -1040,7 +1115,8 @@ function M5KPIs({ data }) {
 
   return (
     <ModulePanel id="m5" icon={Target} title="KPIs de Campanha"
-      subtitle={`Metas da Fase ${faseAtual} · Eleição em ${countdown.days} dias · Dados atualizados pelo scraper`}>
+      subtitle={`Metas da Fase ${faseAtual} · Eleição em ${countdown.days} dias · Dados atualizados pelo scraper`}
+      info={{ title: 'KPIs de Campanha', body: '8 indicadores estratégicos com metas definidas por fase até a eleição de 4 de outubro de 2026. As barras mostram o progresso atual em relação à meta da fase vigente.' }}>
       {/* Countdown */}
       <div style={{ textAlign: 'center', marginBottom: 4 }}>
         <div style={{ fontSize: 'var(--font-xs)', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 8 }}>
@@ -1125,7 +1201,8 @@ function M6BriefingDiario({ mentions }) {
 
   return (
     <ModulePanel id="m6" icon={FileText} title="Briefing Diário"
-      subtitle="Resumo executivo gerado automaticamente às 07h30 — menções com relevância ≥ 0.90">
+      subtitle="Resumo executivo gerado automaticamente às 07h30 — menções com relevância ≥ 0.90"
+      info={{ title: 'Briefing Diário', body: 'Resumo executivo gerado automaticamente às 07h30 e enviado por e-mail com PDF anexo. Consolida as menções mais relevantes do dia, variação nas redes sociais, alertas de crise e ranking de ameaça dos adversários.' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16, gap: 12 }}>
         <span style={{ fontSize: 'var(--font-sm)', color: 'var(--text-muted)' }}>
           Menções de alta relevância (≥ 0.9) — últimas 24h
@@ -1195,7 +1272,8 @@ function M7RadarEntregas({ data }) {
 
   return (
     <ModulePanel id="m7" icon={Package2} title="Radar de Entregas"
-      subtitle="Emendas parlamentares destinadas ao Tocantins no mandato 2019–2026 — Portal da Transparência">
+      subtitle="Emendas parlamentares destinadas ao Tocantins no mandato 2019–2026 — Portal da Transparência"
+      info={{ title: 'Radar de Entregas', body: 'Mapa das emendas parlamentares destinadas pelo Senador Eduardo Gomes aos municípios tocantinenses entre 2019 e 2026, com base no Portal da Transparência Federal. Mais de R$ 2 bilhões entregues ao longo do mandato.' }}>
       {municipios.length === 0 ? (
         <div className="empty-state">
           <Package2 size={32} />
