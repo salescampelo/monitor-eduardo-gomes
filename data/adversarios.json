@@ -1,6 +1,6 @@
 {
   "_info": "Gerado por gerar_adversarios.py — nao edite manualmente",
-  "generated_at": "2026-04-08T16:09:05",
+  "generated_at": "2026-04-08T16:35:35",
   "adversarios": [
     {
       "nome": "Wanderlei Barbosa",
@@ -81,7 +81,7 @@
     {
       "nome": "Vicentinho Junior",
       "partido": "PSDB",
-      "instagram": "vicentinhojunior",
+      "instagram": "vicentinhojuniorpp",
       "cargo_2022": "federal",
       "votos_2022": 52000,
       "sobreposicao": 0.65,
@@ -90,10 +90,10 @@
       "nota": "Migrou para governador. Lidera bloco adversario que inclui Guimaraes ao Senado.",
       "votos_ajustados": 52000.0,
       "mult_cargo": 1.0,
-      "seguidores": 94348,
-      "engajamento": 0.7485,
+      "seguidores": 52000,
+      "engajamento": 0.8173,
       "bonus_federal": 1,
-      "sad": 46.54,
+      "sad": 45.57,
       "classificacao": "MEDIA",
       "alerta": null
     },
@@ -185,10 +185,10 @@
       "nota": "Candidatura confirmada. Esquerda.",
       "votos_ajustados": 16800.0,
       "mult_cargo": 0.6,
-      "seguidores": 0,
-      "engajamento": 0.0,
+      "seguidores": 12000,
+      "engajamento": 0.8917,
       "bonus_federal": 0,
-      "sad": 20.44,
+      "sad": 22.6,
       "classificacao": "BAIXA",
       "alerta": null
     },
