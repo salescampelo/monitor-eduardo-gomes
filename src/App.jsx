@@ -775,7 +775,6 @@ function M3InteligenciaMunicipal({ data }) {
 
   return (
     <ModulePanel id="m3" icon={MapPin} title="Inteligência Municipal"
-      badge={municipios.length > 0 ? `${municipios.length} municípios` : null}
       subtitle="139 municípios do Tocantins ranqueados por potencial eleitoral — base TSE 2022 e entregas">
       {municipios.length === 0 ? (
         <div className="empty-state">
@@ -1040,7 +1039,7 @@ function M5KPIs({ data }) {
   }))
 
   return (
-    <ModulePanel id="m5" icon={Target} title="KPIs de Campanha" badge={`Fase ${faseAtual}`}
+    <ModulePanel id="m5" icon={Target} title="KPIs de Campanha"
       subtitle={`Metas da Fase ${faseAtual} · Eleição em ${countdown.days} dias · Dados atualizados pelo scraper`}>
       {/* Countdown */}
       <div style={{ textAlign: 'center', marginBottom: 4 }}>
@@ -1195,7 +1194,7 @@ function M7RadarEntregas({ data }) {
   const badgeLabel = totalGeral > 0 ? `R$ ${(totalGeral / 1e9).toFixed(1)}bi` : null
 
   return (
-    <ModulePanel id="m7" icon={Package2} title="Radar de Entregas" badge={badgeLabel}
+    <ModulePanel id="m7" icon={Package2} title="Radar de Entregas"
       subtitle="Emendas parlamentares destinadas ao Tocantins no mandato 2019–2026 — Portal da Transparência">
       {municipios.length === 0 ? (
         <div className="empty-state">
