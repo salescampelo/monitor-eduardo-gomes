@@ -614,11 +614,42 @@ function M1MonitorImprensa({ data }) {
 // M2 — Redes Sociais
 // ─────────────────────────────────────────────────────────────
 function M2RedesSociais({ metrics, sentiment }) {
-  const aliados     = metrics?.aliados     || []
-  const adversarios = metrics?.adversarios || []
-  const hasData     = aliados.length > 0 || adversarios.length > 0
+  // Normaliza tanto o formato legado {aliados,adversarios} quanto o formato
+  // atual do script {profiles: {handle: {tipo, followers, engagement_rate}}}
+  const normalizeProfile = p => ({
+    nome:           p.nome || p.handle,
+    seguidores:     p.seguidores   ?? p.followers        ?? 0,
+    engajamento_pct: p.engajamento_pct ?? p.engagement_rate ?? null,
+    is_verified:    p.is_verified  ?? false,
+    handle:         p.handle       || '',
+  })
 
-  const sentGroup = sentiment?.grupos || []
+  let aliados, adversarios
+  if (metrics?.profiles) {
+    const profiles = Object.values(metrics.profiles).map(normalizeProfile)
+    // tipo "senador" → aliados; tipo "adversario" → adversários
+    const raw = Object.values(metrics.profiles)
+    aliados     = raw.filter(p => p.tipo === 'senador').map(normalizeProfile)
+    adversarios = raw.filter(p => p.tipo === 'adversario').map(normalizeProfile)
+  } else {
+    aliados     = (metrics?.aliados     || []).map(normalizeProfile)
+    adversarios = (metrics?.adversarios || []).map(normalizeProfile)
+  }
+  const hasData = aliados.length > 0 || adversarios.length > 0
+
+  // Normaliza sentimento: formato {profiles:{handle:{...}}} ou {grupos:[...]}
+  let sentGroup = []
+  if (sentiment?.profiles) {
+    sentGroup = Object.values(sentiment.profiles).map(s => ({
+      grupo:    `@${s.handle} (${s.nome || s.handle})`,
+      positivo: s.sentiment_proxy === 'positivo' ? s.engagement_rate?.toFixed(1) : null,
+      negativo: s.sentiment_proxy === 'negativo' ? s.engagement_rate?.toFixed(1) : null,
+      tier:     s.engagement_tier,
+      proxy:    s.sentiment_proxy,
+    }))
+  } else {
+    sentGroup = sentiment?.grupos || []
+  }
 
   return (
     <ModulePanel id="m2" icon={Users} title="Redes Sociais">
@@ -677,9 +708,11 @@ function M2RedesSociais({ metrics, sentiment }) {
                   <div key={i} className="card">
                     <div style={{ fontWeight: 600, fontSize: 'var(--font-base)', marginBottom: 6 }}>{g.grupo}</div>
                     <div style={{ fontSize: 'var(--font-sm)', color: 'var(--text-muted)' }}>
-                      Positivo: <strong style={{ color: 'var(--success)' }}>{g.positivo || 0}%</strong>
-                      {' · '}
-                      Negativo: <strong style={{ color: 'var(--danger)' }}>{g.negativo || 0}%</strong>
+                      {g.proxy ? (
+                        <>Engajamento: <strong style={{ color: g.proxy === 'positivo' ? 'var(--success)' : g.proxy === 'negativo' ? 'var(--danger)' : 'var(--text-muted)' }}>{g.tier}</strong></>
+                      ) : (
+                        <>Positivo: <strong style={{ color: 'var(--success)' }}>{g.positivo || 0}%</strong>{' · '}Negativo: <strong style={{ color: 'var(--danger)' }}>{g.negativo || 0}%</strong></>
+                      )}
                     </div>
                   </div>
                 ))}
