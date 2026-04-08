@@ -39,9 +39,13 @@ function useScrollReveal(ready) {
             observer.unobserve(entry.target)
           }
         })
-      }, { threshold: 0.1 })
+      }, { threshold: 0.05 })
       panels.forEach(p => observer.observe(p))
-      return () => observer.disconnect()
+      // Fallback: força reveal em todos após 1.5s caso observer não dispare
+      const fallbackId = setTimeout(() => {
+        document.querySelectorAll('.module-panel:not(.revealed)').forEach(p => p.classList.add('revealed'))
+      }, 1500)
+      return () => { observer.disconnect(); clearTimeout(fallbackId) }
     }, 100)
     return () => clearTimeout(tid)
   }, [ready])
@@ -624,18 +628,18 @@ function M2RedesSociais({ metrics, sentiment }) {
     handle:         p.handle       || '',
   })
 
-  let aliados, adversarios
+  let aliados, aliadosConcorrentes, adversarios
   if (metrics?.profiles) {
-    const profiles = Object.values(metrics.profiles).map(normalizeProfile)
-    // tipo "senador" → aliados; tipo "adversario" → adversários
     const raw = Object.values(metrics.profiles)
-    aliados     = raw.filter(p => p.tipo === 'senador').map(normalizeProfile)
-    adversarios = raw.filter(p => p.tipo === 'adversario').map(normalizeProfile)
+    aliados            = raw.filter(p => p.tipo === 'senador').map(normalizeProfile)
+    aliadosConcorrentes = raw.filter(p => p.tipo === 'aliado_concorrente').map(normalizeProfile)
+    adversarios        = raw.filter(p => p.tipo === 'adversario').map(normalizeProfile)
   } else {
-    aliados     = (metrics?.aliados     || []).map(normalizeProfile)
-    adversarios = (metrics?.adversarios || []).map(normalizeProfile)
+    aliados            = (metrics?.aliados     || []).map(normalizeProfile)
+    aliadosConcorrentes = []
+    adversarios        = (metrics?.adversarios || []).map(normalizeProfile)
   }
-  const hasData = aliados.length > 0 || adversarios.length > 0
+  const hasData = aliados.length > 0 || aliadosConcorrentes.length > 0 || adversarios.length > 0
 
   // Normaliza sentimento: formato {profiles:{handle:{...}}} ou {grupos:[...]}
   let sentGroup = []
@@ -663,12 +667,37 @@ function M2RedesSociais({ metrics, sentiment }) {
           {aliados.length > 0 && (
             <div style={{ marginBottom: 20 }}>
               <h3 style={{ fontSize: 'var(--font-sm)', fontWeight: 600, color: 'var(--success)', marginBottom: 12, textTransform: 'uppercase', letterSpacing: 0.5 }}>
-                Aliados
+                Senador
               </h3>
               <div className="grid-3">
                 {aliados.map((a, i) => (
                   <div key={i} className="card">
                     <div style={{ fontWeight: 600, fontSize: 'var(--font-base)', marginBottom: 6 }}>{a.nome}</div>
+                    <div style={{ fontSize: 'var(--font-md)', fontWeight: 700, color: 'var(--primary)', fontFamily: 'Playfair Display, serif' }}>
+                      {a.seguidores?.toLocaleString('pt-BR') || '—'}
+                    </div>
+                    <div style={{ fontSize: 'var(--font-xs)', color: 'var(--text-muted)', marginTop: 2 }}>
+                      seguidores{a.engajamento_pct != null ? ` · eng. ${a.engajamento_pct.toFixed(1)}%` : ''}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+          {aliadosConcorrentes.length > 0 && (
+            <div style={{ marginBottom: 20 }}>
+              <h3 style={{ fontSize: 'var(--font-sm)', fontWeight: 600, color: 'var(--accent)', marginBottom: 12, textTransform: 'uppercase', letterSpacing: 0.5 }}>
+                Chapa Majoritária
+              </h3>
+              <div className="grid-3">
+                {aliadosConcorrentes.map((a, i) => (
+                  <div key={i} className="card" style={{ borderTop: '2px solid var(--accent)' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 6 }}>
+                      <div style={{ fontWeight: 600, fontSize: 'var(--font-base)' }}>{a.nome}</div>
+                      <span style={{ fontSize: 'var(--font-xs)', fontWeight: 600, color: '#1a1a1a', background: 'var(--accent)', borderRadius: 4, padding: '2px 6px', whiteSpace: 'nowrap' }}>
+                        Aliado
+                      </span>
+                    </div>
                     <div style={{ fontSize: 'var(--font-md)', fontWeight: 700, color: 'var(--primary)', fontFamily: 'Playfair Display, serif' }}>
                       {a.seguidores?.toLocaleString('pt-BR') || '—'}
                     </div>
@@ -692,7 +721,7 @@ function M2RedesSociais({ metrics, sentiment }) {
                     <div style={{ fontSize: 'var(--font-md)', fontWeight: 700, color: 'var(--danger)', fontFamily: 'Playfair Display, serif' }}>
                       {a.seguidores?.toLocaleString('pt-BR') || '—'}
                     </div>
-                    <div style={{ fontSize: 'var(--font-xs)', color: 'var(--text-muted)', marginTop: 2 }}>seguidores</div>
+                    <div style={{ fontSize: 'var(--font-xs)', color: 'var(--text-muted)', marginTop: 2 }}>seguidores{a.engajamento_pct != null ? ` · eng. ${a.engajamento_pct.toFixed(1)}%` : ''}</div>
                   </div>
                 ))}
               </div>
