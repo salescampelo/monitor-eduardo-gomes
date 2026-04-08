@@ -121,14 +121,14 @@ const GLOBAL_CSS = `
   @keyframes spin { from { transform: rotate(0deg) } to { transform: rotate(360deg) } }
 
   /* ── Layout ── */
-  .app-layout { display: flex; min-height: calc(100vh - 60px); }
+  .app-layout { display: flex; min-height: calc(100vh - 140px); }
 
   /* ── Header (glass on scroll via JS class) ── */
   .app-header {
     position: sticky; top: 0; z-index: 100;
     background: var(--primary); color: white;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 18px 24px; min-height: 60px;
+    padding: 24px 24px; min-height: 140px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     transition: background 0.3s ease, backdrop-filter 0.3s ease;
   }
@@ -208,8 +208,8 @@ const GLOBAL_CSS = `
     width: 220px; flex-shrink: 0;
     background: var(--surface);
     border-right: 1px solid #e5e7eb;
-    position: sticky; top: 148px;
-    height: calc(100vh - 148px);
+    position: sticky; top: 228px;
+    height: calc(100vh - 228px);
     overflow-y: auto; padding: 16px 0;
   }
   .sidebar-item {
@@ -244,7 +244,7 @@ const GLOBAL_CSS = `
     border: 1px solid rgba(26,47,90,0.12);
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     margin-bottom: 24px; overflow: hidden;
-    scroll-margin-top: 156px;
+    scroll-margin-top: 236px;
     transition: transform 0.25s cubic-bezier(0.4,0,0.2,1), box-shadow 0.25s cubic-bezier(0.4,0,0.2,1);
     /* scroll reveal — starts hidden, JS adds .revealed */
     opacity: 0; transform: translateY(20px);
