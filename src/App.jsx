@@ -810,63 +810,169 @@ function M3InteligenciaMunicipal({ data }) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// M4 — Inteligência Competitiva
+// M4 — Radar Competitivo
 // ─────────────────────────────────────────────────────────────
 function M4InteligenciaCompetitiva({ data }) {
-  const adversarios = [...(data?.adversarios || [])].sort((a, b) => (b.sad || 0) - (a.sad || 0))
+  const todos = data?.adversarios || []
+
+  const aliados     = todos.filter(a => a.relacao === 'aliado_concorrente')
+  const adversarios = todos.filter(a => a.relacao === 'adversario')
+                           .sort((a, b) => (b.sad || 0) - (a.sad || 0))
+  const influencias = todos.filter(a => a.relacao === 'influencia')
 
   const ameacaColor = { ALTA: 'var(--danger)', MEDIA: 'var(--warning)', BAIXA: 'var(--success)' }
 
+  const secStyle = (borderColor, bgRgb) => ({
+    borderLeft: `3px solid ${borderColor}`,
+    background: `rgba(${bgRgb}, 0.04)`,
+    borderRadius: '0 8px 8px 0',
+    padding: '12px 16px',
+    marginBottom: 20,
+  })
+
+  const secTitle = (label) => (
+    <h3 style={{ fontSize: 'var(--font-sm)', fontWeight: 600, textTransform: 'uppercase',
+      letterSpacing: 0.5, color: 'var(--text-muted)', marginBottom: 12 }}>
+      {label}
+    </h3>
+  )
+
   return (
-    <ModulePanel id="m4" icon={TrendingUp} title="Inteligência Competitiva">
-      {adversarios.length === 0 ? (
+    <ModulePanel id="m4" icon={TrendingUp} title="Radar Competitivo — Aliados e Adversários">
+      {todos.length === 0 ? (
         <div className="empty-state">
           <TrendingUp size={32} />
-          <p>Dados de adversários ainda não disponíveis.</p>
+          <p>Dados competitivos ainda não disponíveis.</p>
         </div>
       ) : (
-        <div className="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Nome</th>
-                <th>Partido</th>
-                <th>SAD</th>
-                <th>Ameaça</th>
-                <th>Alerta</th>
-              </tr>
-            </thead>
-            <tbody>
-              {adversarios.map((adv, i) => (
-                <tr key={i}>
-                  <td style={{ color: 'var(--text-muted)', fontWeight: 700 }}>{i + 1}</td>
-                  <td style={{ fontWeight: 600, fontSize: 'var(--font-base)' }}>{adv.nome}</td>
-                  <td>
-                    <span className="badge" style={{ background: '#e5e7eb', color: 'var(--text)' }}>
-                      {adv.partido}
-                    </span>
-                  </td>
-                  <td style={{ fontWeight: 700, color: 'var(--primary)', fontFamily: 'Playfair Display, serif', fontSize: 'var(--font-md)' }}>
-                    {adv.sad?.toFixed(0) ?? '—'}
-                  </td>
-                  <td>
-                    <span style={{ color: ameacaColor[adv.ameaca] || 'var(--text-muted)', fontWeight: 600, fontSize: 'var(--font-sm)' }}>
-                      {adv.ameaca || '—'}
-                    </span>
-                  </td>
-                  <td>
-                    {adv.alerta === 'candidato_renovacao' && (
-                      <span className="badge" style={{ background: 'var(--warning)' }}>
-                        ⚠ candidato renovação
-                      </span>
+        <>
+          {/* Legenda */}
+          <div style={{ display: 'flex', gap: 20, fontSize: 'var(--font-xs)', color: 'var(--text-muted)',
+            marginBottom: 20, flexWrap: 'wrap', padding: '8px 12px',
+            background: '#f8f9fa', borderRadius: 8 }}>
+            <span>🟢 Chapa majoritária (risco de canibalismo)</span>
+            <span>🔴 Adversários diretos</span>
+            <span>⚫ Atores de influência</span>
+          </div>
+
+          {/* ── Seção A — Aliados / Chapa Majoritária ── */}
+          {aliados.length > 0 && (
+            <div>
+              {secTitle('🟢 Chapa Majoritária')}
+              <div style={secStyle('var(--success)', '45,122,79')}>
+                {aliados.map((a, i) => (
+                  <div key={i} style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between',
+                    gap: 12, paddingBottom: i < aliados.length - 1 ? 12 : 0,
+                    borderBottom: i < aliados.length - 1 ? '1px solid rgba(45,122,79,0.12)' : 'none',
+                    marginBottom: i < aliados.length - 1 ? 12 : 0 }}>
+                    <div style={{ flex: 1 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap', marginBottom: 4 }}>
+                        <span style={{ fontWeight: 600, fontSize: 'var(--font-base)' }}>{a.nome}</span>
+                        <span className="badge" style={{ background: '#e5e7eb', color: 'var(--text)', fontSize: 'var(--font-xs)' }}>
+                          {a.partido}
+                        </span>
+                        <span className="badge" style={{ background: 'var(--accent)', color: '#1a1a0e', fontSize: 'var(--font-xs)' }}>
+                          ⚠ Aliado-Concorrente
+                        </span>
+                      </div>
+                      {a.nota && (
+                        <div style={{ fontSize: 'var(--font-xs)', color: 'var(--text-muted)', lineHeight: 1.5 }}>{a.nota}</div>
+                      )}
+                    </div>
+                    {a.seguidores > 0 && (
+                      <div style={{ textAlign: 'right', flexShrink: 0 }}>
+                        <div style={{ fontWeight: 700, fontSize: 'var(--font-md)', color: 'var(--primary)',
+                          fontFamily: 'Playfair Display, serif' }}>
+                          {a.seguidores.toLocaleString('pt-BR')}
+                        </div>
+                        <div style={{ fontSize: 'var(--font-xs)', color: 'var(--text-muted)' }}>
+                          seg · eng {a.engajamento?.toFixed(2)}%
+                        </div>
+                      </div>
                     )}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* ── Seção B — Adversários Diretos ── */}
+          {adversarios.length > 0 && (
+            <div>
+              {secTitle('🔴 Adversários Diretos')}
+              <div style={secStyle('var(--danger)', '192,57,43')}>
+                <div className="table-wrap" style={{ margin: 0 }}>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Nome</th>
+                        <th>Partido</th>
+                        <th>SAD</th>
+                        <th>Ameaça</th>
+                        <th>Alerta</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {adversarios.map((adv, i) => (
+                        <tr key={i}>
+                          <td style={{ color: 'var(--text-muted)', fontWeight: 700 }}>{i + 1}</td>
+                          <td style={{ fontWeight: 600, fontSize: 'var(--font-base)' }}>{adv.nome}</td>
+                          <td>
+                            <span className="badge" style={{ background: '#e5e7eb', color: 'var(--text)' }}>
+                              {adv.partido}
+                            </span>
+                          </td>
+                          <td style={{ fontWeight: 700, color: 'var(--primary)',
+                            fontFamily: 'Playfair Display, serif', fontSize: 'var(--font-md)' }}>
+                            {adv.sad != null ? adv.sad.toFixed(0) : '—'}
+                          </td>
+                          <td>
+                            <span style={{ color: ameacaColor[adv.classificacao] || 'var(--text-muted)',
+                              fontWeight: 600, fontSize: 'var(--font-sm)' }}>
+                              {adv.classificacao || '—'}
+                            </span>
+                          </td>
+                          <td>
+                            {adv.alerta === 'candidato_renovacao' && (
+                              <span className="badge" style={{ background: 'var(--warning)' }}>
+                                ⚠ Renovação
+                              </span>
+                            )}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* ── Seção C — Atores de Influência ── */}
+          {influencias.length > 0 && (
+            <div>
+              {secTitle('⚫ Atores de Influência')}
+              <div style={secStyle('var(--text-muted)', '107,114,128')}>
+                {influencias.map((inf, i) => (
+                  <div key={i}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+                      <span style={{ fontWeight: 600, fontSize: 'var(--font-base)' }}>{inf.nome}</span>
+                      <span className="badge" style={{ background: '#e5e7eb', color: 'var(--text)', fontSize: 'var(--font-xs)' }}>
+                        {inf.partido}
+                      </span>
+                    </div>
+                    {inf.nota && (
+                      <div style={{ fontSize: 'var(--font-sm)', color: 'var(--text-muted)', lineHeight: 1.6 }}>
+                        {inf.nota}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </>
       )}
     </ModulePanel>
   )
