@@ -1,0 +1,64 @@
+{
+  "eleicao_data": "2026-10-04",
+  "fase_atual": 1,
+  "kpis": [
+    {
+      "id": "intencao_voto",
+      "label": "Intencao de voto estimulada",
+      "unidade": "%",
+      "valor_atual": 19.0,
+      "metas": { "1": 20.0, "2": 22.0, "3": 24.0, "4": 25.0 }
+    },
+    {
+      "id": "rejeicao",
+      "label": "Rejeicao",
+      "unidade": "%",
+      "valor_atual": 11.0,
+      "metas": { "1": 11.0, "2": 9.0, "3": 8.0, "4": 7.0 },
+      "inverso": true
+    },
+    {
+      "id": "seguidores_ig",
+      "label": "Seguidores Instagram",
+      "unidade": "K",
+      "valor_atual": 0,
+      "metas": { "1": 45.0, "2": 65.0, "3": 85.0, "4": 100.0 }
+    },
+    {
+      "id": "municipios_visitados",
+      "label": "Municipios visitados",
+      "unidade": "/139",
+      "valor_atual": 0,
+      "metas": { "1": 30, "2": 60, "3": 85, "4": 100 }
+    },
+    {
+      "id": "mencoes_positivas",
+      "label": "Mencoes positivas por semana",
+      "unidade": "",
+      "valor_atual": 0,
+      "metas": { "1": 20, "2": 35, "3": 45, "4": 50 }
+    },
+    {
+      "id": "verbas_anunciadas",
+      "label": "Verbas anunciadas (R$ mi)",
+      "unidade": "M",
+      "valor_atual": 0,
+      "metas": { "1": 150, "2": 300, "3": 420, "4": 500 }
+    },
+    {
+      "id": "prefeitos_apoiadores",
+      "label": "Prefeitos apoiadores formais",
+      "unidade": "",
+      "valor_atual": 0,
+      "metas": { "1": 30, "2": 55, "3": 70, "4": 80 }
+    },
+    {
+      "id": "sad_adversario",
+      "label": "SAD maior adversario",
+      "unidade": "pts",
+      "valor_atual": 0,
+      "metas": { "2": 75, "3": 70, "4": 65 },
+      "inverso": true
+    }
+  ]
+}
