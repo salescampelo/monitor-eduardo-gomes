@@ -1,59 +1,9 @@
 {
-  "updated_at": "2026-04-08T15:52:51",
+  "updated_at": "2026-04-08T17:05:17",
   "profiles": {
-    "eduardogomespl": {
-      "handle": "eduardogomespl",
-      "nome": "Eduardo Gomes",
-      "tipo": "senador",
-      "engagement_rate": 0.0,
-      "engagement_tier": "baixo",
-      "sentiment_proxy": "negativo",
-      "note": "proxy baseado em engajamento — sem analise NLP de comentarios",
-      "collected_at": "2026-04-08T15:41:48"
-    },
-    "alexandreguimaraesmdb": {
-      "handle": "alexandreguimaraesmdb",
-      "nome": "Alexandre Guimaraes",
-      "tipo": "adversario",
-      "engagement_rate": 0.0,
-      "engagement_tier": "baixo",
-      "sentiment_proxy": "negativo",
-      "note": "proxy baseado em engajamento — sem analise NLP de comentarios",
-      "collected_at": "2026-04-08T15:41:48"
-    },
-    "ronaldo.dimas.oficial": {
-      "handle": "ronaldo.dimas.oficial",
-      "nome": "Ronaldo Dimas",
-      "tipo": "adversario",
-      "engagement_rate": 0.0,
-      "engagement_tier": "baixo",
-      "sentiment_proxy": "negativo",
-      "note": "proxy baseado em engajamento — sem analise NLP de comentarios",
-      "collected_at": "2026-04-08T15:41:48"
-    },
-    "irajatocantins": {
-      "handle": "irajatocantins",
-      "nome": "Iraja Abreu",
-      "tipo": "adversario",
-      "engagement_rate": 0.0,
-      "engagement_tier": "baixo",
-      "sentiment_proxy": "negativo",
-      "note": "proxy baseado em engajamento — sem analise NLP de comentarios",
-      "collected_at": "2026-04-08T15:41:48"
-    },
     "vicentinhojuniorpp": {
       "handle": "vicentinhojuniorpp",
       "nome": "Vicentinho Junior",
-      "tipo": "adversario",
-      "engagement_rate": 0.0,
-      "engagement_tier": "baixo",
-      "sentiment_proxy": "negativo",
-      "note": "proxy baseado em engajamento — sem analise NLP de comentarios",
-      "collected_at": "2026-04-08T15:41:48"
-    },
-    "paulomouraooficial": {
-      "handle": "paulomouraooficial",
-      "nome": "Paulo Mourao",
       "tipo": "adversario",
       "engagement_rate": 0.0,
       "engagement_tier": "baixo",
@@ -78,16 +28,6 @@
       "engagement_rate": 1.697,
       "engagement_tier": "medio",
       "sentiment_proxy": "neutro",
-      "note": "proxy baseado em engajamento — sem analise NLP de comentarios",
-      "collected_at": "2026-04-08T15:52:51"
-    },
-    "vicentinhojunior": {
-      "handle": "vicentinhojunior",
-      "nome": "Vicentinho Junior",
-      "tipo": "adversario",
-      "engagement_rate": 0.7485,
-      "engagement_tier": "baixo",
-      "sentiment_proxy": "negativo",
       "note": "proxy baseado em engajamento — sem analise NLP de comentarios",
       "collected_at": "2026-04-08T15:52:51"
     },
