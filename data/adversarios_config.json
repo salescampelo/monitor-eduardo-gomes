@@ -3,7 +3,7 @@
     {
       "nome": "Vicentinho Junior",
       "partido": "PP",
-      "instagram": "vicentinhojuniorpp",
+      "instagram": "vicentinhojunior",
       "votos_2022": 52000,
       "cargo_2022": "federal",
       "sobreposicao": 0.65,
@@ -14,7 +14,7 @@
     {
       "nome": "Iraja Abreu",
       "partido": "PSD",
-      "instagram": "irajatocantins",
+      "instagram": "irajasenador",
       "votos_2022": 180000,
       "cargo_2022": "senado",
       "sobreposicao": 0.80,
@@ -25,7 +25,7 @@
     {
       "nome": "Alexandre Guimaraes",
       "partido": "MDB",
-      "instagram": "alexandreguimaraesmdb",
+      "instagram": "alexandreguimaraes15",
       "votos_2022": 35000,
       "cargo_2022": "federal",
       "sobreposicao": 0.50,
@@ -36,7 +36,7 @@
     {
       "nome": "Ronaldo Dimas",
       "partido": "PL",
-      "instagram": "ronaldo.dimas.oficial",
+      "instagram": "ronaldodimastocantins",
       "votos_2022": 42000,
       "cargo_2022": "federal",
       "sobreposicao": 0.40,
@@ -47,13 +47,68 @@
     {
       "nome": "Paulo Mourao",
       "partido": "PT",
-      "instagram": "paulomouraooficial",
+      "instagram": "paulomouraopt",
       "votos_2022": 28000,
       "cargo_2022": "estadual",
       "sobreposicao": 0.25,
       "nivel_base": 30,
       "rejeicao_estimada": 10,
       "nota": ""
+    },
+    {
+      "nome": "Katia Abreu",
+      "partido": "PSD",
+      "instagram": "senadorakatiaabreu",
+      "votos_2022": 0,
+      "cargo_2022": "federal",
+      "sobreposicao": 0.70,
+      "nivel_base": 65,
+      "rejeicao_estimada": 22,
+      "nota": "Ex-senadora TO, alta rejeicao historica, forte base ruralista"
+    },
+    {
+      "nome": "Carlos Gaguim",
+      "partido": "PODE",
+      "instagram": "carlosgaguim",
+      "votos_2022": 0,
+      "cargo_2022": "estadual",
+      "sobreposicao": 0.55,
+      "nivel_base": 50,
+      "rejeicao_estimada": 15,
+      "nota": "Ex-governador TO"
+    },
+    {
+      "nome": "Celio Mourato",
+      "partido": "PL",
+      "instagram": "celiomourato",
+      "votos_2022": 0,
+      "cargo_2022": "estadual",
+      "sobreposicao": 0.30,
+      "nivel_base": 25,
+      "rejeicao_estimada": 8,
+      "nota": "Virtual candidato — base em construcao"
+    },
+    {
+      "nome": "Luxao",
+      "partido": "SOLID",
+      "instagram": "luxaoficial",
+      "votos_2022": 0,
+      "cargo_2022": "estadual",
+      "sobreposicao": 0.35,
+      "nivel_base": 30,
+      "rejeicao_estimada": 10,
+      "nota": "Virtual candidato"
+    },
+    {
+      "nome": "Wanderlei Barbosa",
+      "partido": "PL",
+      "instagram": "wanderlei__barbosa",
+      "votos_2022": 620000,
+      "cargo_2022": "estadual",
+      "sobreposicao": 0.75,
+      "nivel_base": 70,
+      "rejeicao_estimada": 18,
+      "nota": "Governador atual TO PL — potencial competidor por vaga no Senado"
     }
   ]
 }
